@@ -16,6 +16,20 @@
       "to": "#454545"
     }
   },
+  "versions": [
+    {
+      "name": "English",
+      "locale": "en",
+      "default": true
+      
+      
+    },
+    {
+      "name": "Español",
+      "locale": "es"
+     
+    }
+  ],
   "font": {
     "headings": {
       "family": "Poppins",
@@ -51,21 +65,18 @@
   "navigation": [
     {
       "group": "Get Started",
+      "version": "English",
       "pages": [
-        "introduction",
-        "quickstart",
-        "development"
+        "en/introduction"
+     
       ]
     },
     {
-      "group": "Essentials",
+      "group": "Get Started",
+      "version": "Español",
       "pages": [
-        "essentials/markdown",
-        "essentials/code",
-        "essentials/images",
-        "essentials/settings",
-        "essentials/navigation",
-        "essentials/reusable-snippets"
+        "es/introduction"
+      
       ]
     }
   ],
