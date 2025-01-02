@@ -21,8 +21,6 @@
       "name": "English",
       "locale": "en",
       "default": true
-      
-      
     },
     {
       "name": "Español",
@@ -52,11 +50,6 @@
   },
   "anchors": [
     {
-      "name": "Documentation",
-      "icon": "book-open-cover",
-      "url": "https://docs.brainbox.com.co"
-    },
-    {
       "name": "Blog",
       "icon": "newspaper",
       "url": "https://blog.brainbox.com.co"
@@ -72,7 +65,7 @@
       ]
     },
     {
-      "group": "Get Started",
+      "group": "Empezar",
       "version": "Español",
       "pages": [
         "es/introduction"
