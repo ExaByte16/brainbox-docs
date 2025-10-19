@@ -40,15 +40,9 @@ Think of it as a **"Documentation-as-Code" platform** where you write content in
 ```
 Your Repository
     ↓
-(Contains mint.json + .mdx files)
-    ↓
-Mintlify CLI (Local Development)
-    ↓ OR ↓
-GitHub Integration (Auto-Deploy)
+Mintlify CLI (Local Development) OR GitHub Integration (Auto-Deploy)
     ↓
 Next.js Build & Compilation
-    ↓
-Static HTML Generation + React Components
     ↓
 CDN Distribution (Hosted on Mintlify's Infrastructure)
     ↓
@@ -78,55 +72,41 @@ The `mint.json` file is **the most critical file** in any Mintlify project. It's
 - API documentation settings
 - Deployment configurations
 
-#### BrainBox's mint.json Breakdown
-
 ```json
 {
   "$schema": "https://mintlify.com/schema.json",
-  // ↑ Validates JSON structure against Mintlify's official schema
   
   "name": "BrainBox Documentation",
-  // ↑ Display name for the entire documentation site
-  // Used in page titles, meta tags, and UI
   
   "logo": {
-    "dark": "/logo/dark.svg",      // SVG for dark mode
-    "light": "/logo/light.svg",    // SVG for light mode
-    "href": "https://brainbox.com.co"  // Where logo clicks navigate to
+    "dark": "/logo/dark.svg",
+    "light": "/logo/light.svg",
+    "href": "https://brainbox.com.co"
   },
-  // ↑ Logo is ALWAYS shown in top-left corner of sidebar
-  // Automatically switches based on user's theme preference
   
   "favicon": "/favicon.png",
-  // ↑ Browser tab icon (16x16 or 32x32 recommended)
   
   "colors": {
-    "primary": "#2E2E2E",     // Main accent color (dark gray)
-    "light": "#454545",       // Alternative accent for light mode
-    "dark": "#2E2E2E",        // Important buttons/borders
-    "anchors": {              // Gradient for navigation "anchor" links
+    "primary": "#2E2E2E",
+    "light": "#454545",
+    "dark": "#2E2E2E",
+    "anchors": {
       "from": "#2E2E2E",
       "to": "#454545"
     }
   },
-  // ↑ Color scheme impacts:
-  //   - Links, buttons, highlights
-  //   - Sidebar active states
-  //   - Code syntax highlighting accents
   
   "versions": [
     {
       "name": "English",
       "locale": "en",
-      "default": true      // English is primary language
+      "default": true
     },
     {
       "name": "Español",
-      "locale": "es"       // Spanish translation available
+      "locale": "es"
     }
   ],
-  // ↑ Creates a language selector dropdown in top-right
-  // Each locale must have separate folder (en/, es/)
   
   "font": {
     "headings": {
@@ -138,8 +118,6 @@ The `mint.json` file is **the most critical file** in any Mintlify project. It's
       "weight": 400
     }
   },
-  // ↑ Typography stack loaded from Google Fonts
-  // Affects entire page appearance
   
   "topbarLinks": [
     {
@@ -147,15 +125,11 @@ The `mint.json` file is **the most critical file** in any Mintlify project. It's
       "url": "mailto:support@brainbox.com.co"
     }
   ],
-  // ↑ Links in the top-right navigation bar
-  // Support email when clicked
   
   "topbarCtaButton": {
     "name": "Get Started",
     "url": "https://app.brainbox.com.co"
   },
-  // ↑ Prominent call-to-action button in top-right
-  // Usually routes to app/signup
   
   "anchors": [
     {
@@ -164,8 +138,6 @@ The `mint.json` file is **the most critical file** in any Mintlify project. It's
       "url": "https://blog.brainbox.com.co"
     }
   ],
-  // ↑ Secondary navigation anchors (left sidebar)
-  // Can link to external sites or documentation sections
   
   "navigation": [
     {
@@ -179,27 +151,20 @@ The `mint.json` file is **the most critical file** in any Mintlify project. It's
       "pages": ["es/introduction"]
     }
   ],
-  // ↑ CRITICAL: Defines sidebar menu structure
-  // Only pages listed here appear in navigation
   
   "footerSocials": {
     "x": "https://x.com/usebrainboxai",
     "linkedin": "https://www.linkedin.com/showcase/brainbox-en"
   },
-  // ↑ Social media icons in footer
   
   "feedback": {
-    "suggestEdit": true,    // "Edit this page" button
-    "raiseIssue": true      // "Report issue" button
+    "suggestEdit": true,
+    "raiseIssue": true
   },
-  // ↑ Enables user engagement features
-  // Suggests edits via GitHub PRs
   
   "search": {
     "prompt": "Search BrainBox docs..."
   }
-  // ↑ Search bar placeholder text
-  // Full-text search powered by Mintlify's indexing
 }
 ```
 
@@ -228,7 +193,7 @@ The `mint.json` file is **the most critical file** in any Mintlify project. It's
 
 ```
 brainbox-docs/
-├── mint.json                 # 🎯 Master configuration
+├── mint.json                 # Master configuration
 ├── README.md                 # Project documentation
 ├── development.mdx           # Root-level page (accessible at /development)
 ├── introduction.mdx          # Root-level page (accessible at /introduction)
@@ -1021,15 +986,11 @@ LAYER 1: Configuration (mint.json)
 ├── Sets colors, fonts, branding
 └── Enables/disables features
 
-          ↓↓↓ POWERS ↓↓↓
-
 LAYER 2: File Organization (Folder Structure)
 ├── Folders → URL paths (/folder/page)
 ├── Files → Individual pages
 ├── snippets/ → Reusable components
 └── images/ → Static assets
-
-          ↓↓↓ RENDERS ↓↓↓
 
 LAYER 3: Content (MDX Files)
 ├── Front matter (title, icon, version)
@@ -1038,9 +999,7 @@ LAYER 3: Content (MDX Files)
 ├── External links & references
 └── Embedded media
 
-          ↓↓↓ BECOMES ↓↓↓
-
-PUBLIC WEBSITE
+RESULT: Public Website
 ├── Responsive design
 ├── Search functionality
 ├── Multi-language support
@@ -1122,3 +1081,4 @@ PUBLIC WEBSITE
 ---
 
 **This document represents a complete deep-dive into Mintlify architecture, configuration, and best practices as of your current setup. Use it as a reference guide for all documentation maintenance and expansion.**
+

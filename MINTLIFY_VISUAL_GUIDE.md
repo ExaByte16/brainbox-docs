@@ -3,46 +3,25 @@
 ## 1. Complete System Diagram
 
 ```
-┌─────────────────────────────────────────────────────────────────────┐
-│                    MINTLIFY DOCUMENTATION PLATFORM                  │
-├─────────────────────────────────────────────────────────────────────┤
-│                                                                     │
-│  YOUR LOCAL MACHINE                  GITHUB REPOSITORY             │
-│  ┌────────────────┐                  ┌──────────────────┐          │
-│  │ .mdx files     │ ─── git push ──→ │ .mdx files       │          │
-│  │ mint.json      │                  │ mint.json        │          │
-│  │ /images        │                  │ /images          │          │
-│  │ /logo          │                  │ /logo            │          │
-│  └────────────────┘                  └──────────────────┘          │
-│         │                                     │                    │
-│         │ mintlify dev                        │ GitHub App         │
-│         │ (localhost:3000)                    │ (webhook)          │
-│         ↓                                     ↓                    │
-│  ┌─────────────────┐                 ┌──────────────────┐          │
-│  │ Dev Preview     │                 │ Mintlify Build   │          │
-│  │ (Hot Reload)    │                 │ (Automated)      │          │
-│  └─────────────────┘                 └──────────────────┘          │
-│         │                                     │                    │
-│         └─────────────────┬───────────────────┘                    │
-│                           │                                        │
-│                    ↓ Next.js Build ↓                              │
-│                                                                    │
-│                    ┌──────────────────────┐                       │
-│                    │  Static HTML + React │                       │
-│                    │   Components         │                       │
-│                    └──────────────────────┘                       │
-│                           │                                        │
-│                           ↓                                        │
-│                    ┌──────────────────────┐                       │
-│                    │  CDN Distribution    │                       │
-│                    │  (Mintlify Servers)  │                       │
-│                    └──────────────────────┘                       │
-│                           │                                        │
-│                           ↓                                        │
-│                    PUBLIC WEBSITE                                 │
-│            docs.brainbox.com OR custom                            │
-│                                                                    │
-└─────────────────────────────────────────────────────────────────────┘
+YOUR LOCAL MACHINE                  GITHUB REPOSITORY
+├── .mdx files      ──git push──>   ├── .mdx files
+├── mint.json                       ├── mint.json
+├── /images                         └── /images
+└── /logo
+
+        ↓ mintlify dev                  ↓ GitHub App webhook
+        
+Dev Preview (localhost:3000)     Mintlify Build (Automated)
+
+        └──────────────┬──────────────┘
+                       ↓
+                Next.js Build
+                       ↓
+            Static HTML + React Components
+                       ↓
+                CDN Distribution
+                       ↓
+        PUBLIC WEBSITE (docs.brainbox.com)
 ```
 
 ---
@@ -52,24 +31,24 @@
 ```
 brainbox-docs/ (Project Root)
 │
-├── 🎯 mint.json
+├── mint.json
 │   └─ Controls: Site name, colors, nav, versions, features
 │
-├── 📄 README.md
+├── README.md
 │   └─ Project documentation
 │
 ├── Root Pages (Accessible if in mint.json nav)
 │   ├── introduction.mdx      → URL: /introduction
 │   ├── quickstart.mdx        → URL: /quickstart
-│   ├── development.mdx       → URL: /development
+│   └── development.mdx       → URL: /development
 │
-├── 🌐 en/ (English Version)
-│   ├── introduction.mdx      → URL: /en/introduction
+├── en/ (English Version)
+│   └── introduction.mdx      → URL: /en/introduction
 │
-├── 🌐 es/ (Spanish Version)
-│   ├── introduction.mdx      → URL: /es/introduction
+├── es/ (Spanish Version)
+│   └── introduction.mdx      → URL: /es/introduction
 │
-├── 📚 essentials/ (Guide Content - Optional Grouping)
+├── essentials/ (Guide Content)
 │   ├── code.mdx              → URL: /essentials/code
 │   ├── markdown.mdx          → URL: /essentials/markdown
 │   ├── images.mdx            → URL: /essentials/images
@@ -77,27 +56,18 @@ brainbox-docs/ (Project Root)
 │   ├── settings.mdx          → URL: /essentials/settings
 │   └── reusable-snippets.mdx → URL: /essentials/reusable-snippets
 │
-├── 🔄 snippets/ (NOT PUBLIC)
+├── snippets/ (NOT PUBLIC)
 │   └── snippet-intro.mdx     → Import only, not accessible
 │
-├── 🎨 logo/
+├── logo/
 │   ├── dark.svg
 │   └── light.svg
 │
-└── 🖼️ images/
+└── images/
     ├── checks-passed.png
     ├── hero-dark.svg
     ├── hero-light.svg
     └── Introduccion.png
-
-Legend:
-🎯 = Configuration
-📄 = Documentation
-🌐 = Language Version
-📚 = Content Grouping
-🔄 = Reusable Content
-🎨 = Branding
-🖼️ = Assets
 ```
 
 ---
@@ -105,51 +75,42 @@ Legend:
 ## 3. MDX Document Structure
 
 ```
-┌─────────────────────────────────────────────────────────────┐
-│ example-page.mdx                                            │
-├─────────────────────────────────────────────────────────────┤
-│                                                             │
-│  ┌──── FRONT MATTER (YAML) ────┐                          │
-│  │  ---                         │                          │
-│  │  title: "Page Title"         │ ← Page title in browser  │
-│  │  description: "Page desc"    │ ← SEO & preview         │
-│  │  icon: "pen-to-square"       │ ← Sidebar icon          │
-│  │  ---                         │                          │
-│  └──────────────────────────────┘                          │
-│                                                             │
-│  ┌──── MARKDOWN CONTENT ────┐                             │
-│  │                          │                             │
-│  │  # Main Heading          │ ← Creates anchor + TOC     │
-│  │  ## Subheading           │ ← Creates anchor + TOC     │
-│  │                          │                             │
-│  │  **Bold text** here      │ ← Styling                  │
-│  │  _italic text_ here      │                             │
-│  │                          │                             │
-│  │  [Link](/page)           │ ← Navigation               │
-│  │  ![Alt](/image.png)      │ ← Images                   │
-│  │                          │                             │
-│  │  ```javascript           │ ← Code blocks              │
-│  │  const hello = "world";  │    with syntax highlight   │
-│  │  ```                     │                             │
-│  │                          │                             │
-│  └──────────────────────────┘                             │
-│                                                             │
-│  ┌──── REACT COMPONENTS ────┐                             │
-│  │                          │                             │
-│  │  <Card                   │ ← Interactive elements      │
-│  │    title="..."           │                             │
-│  │    href="..."            │                             │
-│  │  >                       │                             │
-│  │    Text                  │                             │
-│  │  </Card>                 │                             │
-│  │                          │                             │
-│  │  <Tip>                   │ ← Callout boxes            │
-│  │    Important info        │                             │
-│  │  </Tip>                  │                             │
-│  │                          │                             │
-│  └──────────────────────────┘                             │
-│                                                             │
-└─────────────────────────────────────────────────────────────┘
+example-page.mdx
+
+FRONT MATTER (YAML)
+---
+title: "Page Title"         ← Page title in browser
+description: "Page desc"    ← SEO & preview
+icon: "pen-to-square"       ← Sidebar icon
+---
+
+MARKDOWN CONTENT
+
+# Main Heading              ← Creates anchor + TOC
+## Subheading               ← Creates anchor + TOC
+
+**Bold text** here          ← Styling
+_italic text_ here
+
+[Link](/page)               ← Navigation
+![Alt](/image.png)          ← Images
+
+```javascript
+const hello = "world";      ← Code blocks
+```                              with syntax highlight
+
+REACT COMPONENTS
+
+<Card
+  title="..."               ← Interactive elements
+  href="..."
+>
+  Text
+</Card>
+
+<Tip>
+  Important info            ← Callout boxes
+</Tip>
 ```
 
 ---
@@ -157,42 +118,33 @@ Legend:
 ## 4. mint.json Configuration Map
 
 ```
-┌──────────────────────────────────────────────────────────────┐
-│                     mint.json Structure                       │
-├──────────────────────────────────────────────────────────────┤
-│                                                              │
-│  ┌─── BRANDING ───┐                                         │
-│  │ name           │                                         │
-│  │ logo           │ → Website appearance                    │
-│  │ favicon        │                                         │
-│  │ colors         │                                         │
-│  │ font           │                                         │
-│  └────────────────┘                                         │
-│                                                              │
-│  ┌─── NAVIGATION ────────┐                                  │
-│  │ topbarLinks           │                                  │
-│  │ topbarCtaButton       │ → Header & menu                  │
-│  │ anchors               │                                  │
-│  │ navigation            │                                  │
-│  └───────────────────────┘                                  │
-│                                                              │
-│  ┌─── INTERNATIONALIZATION ───┐                            │
-│  │ versions (en, es, etc.)    │ → Language support          │
-│  └────────────────────────────┘                             │
-│                                                              │
-│  ┌─── ENGAGEMENT ────────┐                                  │
-│  │ feedback              │                                  │
-│  │ search                │ → User features                  │
-│  │ footerSocials         │                                  │
-│  └───────────────────────┘                                  │
-│                                                              │
-│  ┌─── API DOCS ────┐                                        │
-│  │ openapi         │                                        │
-│  │ api.baseUrl     │ → API documentation                    │
-│  │ api.auth        │                                        │
-│  └─────────────────┘                                        │
-│                                                              │
-└──────────────────────────────────────────────────────────────┘
+mint.json Structure
+
+BRANDING
+├── name
+├── logo              → Website appearance
+├── favicon
+├── colors
+└── font
+
+NAVIGATION
+├── topbarLinks
+├── topbarCtaButton   → Header & menu
+├── anchors
+└── navigation
+
+INTERNATIONALIZATION
+└── versions (en, es, etc.)  → Language support
+
+ENGAGEMENT
+├── feedback
+├── search            → User features
+└── footerSocials
+
+API DOCS
+├── openapi
+├── api.baseUrl       → API documentation
+└── api.auth
 ```
 
 ---
@@ -200,40 +152,41 @@ Legend:
 ## 5. Website Layout Map
 
 ```
-┌─────────────────────────────────────────────────────────────────┐
-│                                                                 │
-│  ┌──── TOP BAR ──────────────────────────────────────────────┐ │
-│  │ [LOGO] Documentation    [Support] [🌐 English ▼] [Get Started] │
-│  └────────────────────────────────────────────────────────────┘ │
-│                                                                 │
-│  ┌──────────────────┬──────────────────────────┬──────────────┐ │
-│  │                  │                          │              │ │
-│  │  SIDEBAR NAV     │    MAIN CONTENT          │  RIGHT TOC   │ │
-│  │  (from mint.json)│    (from .mdx)           │  (auto gen)  │ │
-│  │                  │                          │              │ │
-│  │ 📄 Get Started   │  ## Main Title           │ On this page │
-│  │   ├─ Quickstart  │     Lorem ipsum...       │  • Main Title│
-│  │   └─ Setup       │                          │  • Subtitle  │
-│  │                  │  ### Subtitle            │  • Sub-sub   │
-│  │ 📚 Guides        │     Content here         │              │
-│  │   ├─ Markdown    │     <Card/>              │  ✏️ Edit this│
-│  │   ├─ Code        │     <Tip/>               │  🐛 Report   │
-│  │   └─ Images      │                          │              │
-│  │                  │  More content...         │              │
-│  │ 🔗 Blog          │                          │              │
-│  │                  │                          │              │
-│  │ [🔍 Search...]   │                          │              │
-│  │                  │                          │              │
-│  └──────────────────┴──────────────────────────┴──────────────┘ │
-│                                                                 │
-│  ┌─── FOOTER ──────────────────────────────────────────────────┐ │
-│  │                                                            │ │
-│  │  © 2024 BrainBox    [🐦 Twitter] [💼 LinkedIn]           │ │
-│  │  [Privacy] [Terms]                                       │ │
-│  │                                                            │ │
-│  └─────────────────────────────────────────────────────────────┘ │
-│                                                                 │
-└─────────────────────────────────────────────────────────────────┘
+TOP BAR
+[LOGO] Documentation    [Support] [🌐 English ▼] [Get Started]
+
+MAIN CONTENT AREA
+├── SIDEBAR NAV (from mint.json)
+│   ├── 📄 Get Started
+│   │   ├─ Quickstart
+│   │   └─ Setup
+│   ├── 📚 Guides
+│   │   ├─ Markdown
+│   │   ├─ Code
+│   │   └─ Images
+│   ├── 🔗 Blog
+│   └── [🔍 Search...]
+│
+├── MAIN CONTENT (from .mdx)
+│   ├── ## Main Title
+│   ├── Lorem ipsum...
+│   ├── ### Subtitle
+│   ├── Content here
+│   ├── <Card/>
+│   ├── <Tip/>
+│   └── More content...
+│
+└── RIGHT TOC (auto generated)
+    ├── On this page
+    ├── • Main Title
+    ├── • Subtitle
+    ├── • Sub-sub
+    ├── ✏️ Edit this
+    └── 🐛 Report
+
+FOOTER
+© 2024 BrainBox    [🐦 Twitter] [💼 LinkedIn]
+[Privacy] [Terms]
 ```
 
 ---
@@ -342,30 +295,28 @@ Total Time: ~1-3 minutes from push to production
 ## 9. Component Quick Reference
 
 ```
-┌─ COMPONENT FAMILIES ─────────────────────────────────────┐
-│                                                          │
-│ 🎨 CONTENT DISPLAY                                       │
-│  ├─ <Card> / <CardGroup>        Info cards              │
-│  ├─ <Accordion> / <AccordionGroup> Expandable sections   │
-│  └─ <Tabs> / <Tab>              Tabbed content           │
-│                                                          │
-│ ⚠️ CALLOUT BOXES                                         │
-│  ├─ <Info>                      Gray info box            │
-│  ├─ <Tip>                       Green tip box            │
-│  ├─ <Note>                      Blue note box            │
-│  └─ <Warning>                   Red warning box          │
-│                                                          │
-│ 📋 STRUCTURED DATA                                       │
-│  ├─ <Steps> / <Step>            Numbered procedures      │
-│  ├─ <ResponseField>             API parameters           │
-│  └─ <CodeGroup>                 Multi-language code      │
-│                                                          │
-│ 📦 CONTAINERS                                            │
-│  ├─ <Frame>                     Image/content wrapper    │
-│  ├─ <Expandable>                Expandable section       │
-│  └─ <Latex>                     Math formulas            │
-│                                                          │
-└──────────────────────────────────────────────────────────┘
+COMPONENT FAMILIES
+
+🎨 CONTENT DISPLAY
+├── <Card> / <CardGroup>       Info cards
+├── <Accordion> / <AccordionGroup> Expandable sections
+└── <Tabs> / <Tab>             Tabbed content
+
+⚠️ CALLOUT BOXES
+├── <Info>                     Gray info box
+├── <Tip>                      Green tip box
+├── <Note>                     Blue note box
+└── <Warning>                  Red warning box
+
+📋 STRUCTURED DATA
+├── <Steps> / <Step>           Numbered procedures
+├── <ResponseField>            API parameters
+└── <CodeGroup>                Multi-language code
+
+📦 CONTAINERS
+├── <Frame>                    Image/content wrapper
+├── <Expandable>               Expandable section
+└── <Latex>                    Math formulas
 ```
 
 ---
@@ -387,15 +338,13 @@ mint.json Colors:
 
 Applied to Website Elements:
 
-┌────────────────────────────────────────┐
-│ Links:           [#2E2E2E underline]   │
-│ Active sidebar:  [#454545 background]  │
-│ CTA button:      [#2E2E2E background]  │
-│ Tip box border:  [#2E2E2E left edge]   │
-│ Anchor links:    [#2E2E2E→#454545]     │
-│ Code highlights: [#2E2E2E accents]     │
-│ Hover states:    [#454545 highlight]   │
-└────────────────────────────────────────┘
+Links:           [#2E2E2E underline]
+Active sidebar:  [#454545 background]
+CTA button:      [#2E2E2E background]
+Tip box border:  [#2E2E2E left edge]
+Anchor links:    [#2E2E2E→#454545]
+Code highlights: [#2E2E2E accents]
+Hover states:    [#454545 highlight]
 ```
 
 ---
@@ -403,21 +352,17 @@ Applied to Website Elements:
 ## 11. Page Accessibility vs Visibility
 
 ```
-┌─────────────────────────────────────────────────────────┐
-│ File: en/my-page.mdx                                   │
-├─────────────────────────────────────────────────────────┤
-│                                                         │
-│ In mint.json navigation? NO  →  Hidden from sidebar   │
-│                                                         │
-│ Still accessible via:                                  │
-│  ✅ Direct URL: /en/my-page                            │
-│  ✅ Search bar: Search for content                     │
-│  ✅ Internal links: [Link text](/en/my-page)          │
-│  ❌ NOT in sidebar menu                                │
-│                                                         │
-│ Use case: Drafts, utilities, API ref pages            │
-│                                                         │
-└─────────────────────────────────────────────────────────┘
+File: en/my-page.mdx
+
+In mint.json navigation? NO  →  Hidden from sidebar
+
+Still accessible via:
+✅ Direct URL: /en/my-page
+✅ Search bar: Search for content
+✅ Internal links: [Link text](/en/my-page)
+❌ NOT in sidebar menu
+
+Use case: Drafts, utilities, API ref pages
 ```
 
 ---
@@ -426,26 +371,23 @@ Applied to Website Elements:
 
 ```
 GitHub Commit:
-
 "Update documentation"
-
-↓ GitHub App processes ↓
 
 Status Indicators:
 
 ✅ Green checkmark = Deployment successful
-   └─ Changes live on docs site (1-2 min)
+   Changes live on docs site (1-2 min)
 
 ❌ Red X = Deployment failed
-   ├─ Check Mintlify dashboard for errors
-   └─ Common issues:
-      ├─ Invalid JSON in mint.json
-      ├─ Broken MDX syntax
-      ├─ Missing image files
-      └─ Page reference errors
+   Check Mintlify dashboard for errors
+   Common issues:
+   ├─ Invalid JSON in mint.json
+   ├─ Broken MDX syntax
+   ├─ Missing image files
+   └─ Page reference errors
 
 ⏳ Yellow circle = Building
-   └─ Mintlify is compiling your changes
+   Mintlify is compiling your changes
 ```
 
 ---
@@ -498,29 +440,25 @@ All users see updated docs
 ## 14. Quick Command Reference
 
 ```
-┌─────────────────────────────────────────────────────────┐
-│ ESSENTIAL MINTLIFY COMMANDS                             │
-├─────────────────────────────────────────────────────────┤
-│                                                         │
-│ Installation:                                           │
-│  npm install -g mintlify                               │
-│  npm install -g mintlify@latest    (update)            │
-│  npm remove -g mintlify            (uninstall)         │
-│                                                         │
-│ Development:                                            │
-│  mintlify dev                      (start local)       │
-│  mintlify dev --port 3333          (custom port)       │
-│  Ctrl+C                            (stop server)       │
-│                                                         │
-│ Validation:                                             │
-│  mintlify broken-links             (check links)       │
-│  mintlify install                  (reinstall deps)    │
-│                                                         │
-│ Build & Deploy:                                         │
-│  (automatic via GitHub)                                 │
-│  (manual via dashboard)                                 │
-│                                                         │
-└─────────────────────────────────────────────────────────┘
+ESSENTIAL MINTLIFY COMMANDS
+
+Installation:
+npm install -g mintlify
+npm install -g mintlify@latest    (update)
+npm remove -g mintlify            (uninstall)
+
+Development:
+mintlify dev                      (start local)
+mintlify dev --port 3333          (custom port)
+Ctrl+C                            (stop server)
+
+Validation:
+mintlify broken-links             (check links)
+mintlify install                  (reinstall deps)
+
+Build & Deploy:
+(automatic via GitHub)
+(manual via dashboard)
 ```
 
 ---
@@ -528,34 +466,31 @@ All users see updated docs
 ## 15. Troubleshooting Decision Tree
 
 ```
-                    Problem?
-                       ↓
-        ┌──────────────┼──────────────┐
-        ↓              ↓              ↓
-    Local dev       Build fails    Content issues
-    not working     in production
-        ↓              ↓              ↓
-    ┌─────────────┬─────────────┬──────────────┐
-    ↓             ↓             ↓              ↓
-  Port in   Invalid JSON  Broken links   Page not
-  use?      in mint.json   in navigation  showing
-    ↓             ↓             ↓              ↓
-  Use --port  Fix JSON      Check            Add to
-  flag        syntax        mint.json        mint.json
-    ↓             ↓             ↓              ↓
-  Works      Works         Works            Works
-    │             │             │              │
-    └─────────────┴─────────────┴──────────────┘
-                   ↓
-            Commit and push
-                   ↓
-            Wait 1-2 minutes
-                   ↓
-            Check docs site
-                   ↓
-                 DONE!
+Problem?
+  ↓
+  ├─ Local dev not working?
+  │  ├─ Port in use? → Use --port flag
+  │  └─ Works
+  │
+  ├─ Build fails in production?
+  │  ├─ Invalid JSON in mint.json? → Fix JSON syntax
+  │  └─ Works
+  │
+  └─ Content issues?
+     ├─ Broken links in navigation? → Check mint.json
+     ├─ Page not showing? → Add to mint.json
+     └─ Works
+
+Commit and push
+  ↓
+Wait 1-2 minutes
+  ↓
+Check docs site
+  ↓
+DONE!
 ```
 
 ---
 
 **Use this visual guide alongside the deep research document for complete understanding of Mintlify!**
+

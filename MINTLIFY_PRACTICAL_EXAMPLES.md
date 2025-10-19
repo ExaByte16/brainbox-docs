@@ -828,7 +828,7 @@ If you are not redirected automatically, [click here](/uploading-documents).
       "group": "Category",
       "pages": [
         "en/existing-page",
-        "en/new-page"  // ← Make sure it's here
+        "en/new-page"
       ]
     }
   ]
@@ -886,8 +886,8 @@ If you are not redirected automatically, [click here](/uploading-documents).
 ❌ WRONG - Extra space before component:
 <CardGroup cols={2}>
 
-    ❌ WRONG - Component not imported (should auto-import)
-    <CustomComponent />
+❌ WRONG - Component not imported (should auto-import)
+<CustomComponent />
 
 ✅ CORRECT:
 <CardGroup cols={2}>
@@ -952,3 +952,4 @@ mintlify broken-links
 ---
 
 **This practical guide should help you handle real-world documentation scenarios with confidence!**
+

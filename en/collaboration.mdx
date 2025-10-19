@@ -80,39 +80,11 @@ This is the primary way to share content in BrainBox. You can share specific box
 
 ### Choosing the Right Role
 
-```
-    ┌─────────────────────────────────────────────┐
-    │      CHOOSING THE RIGHT ROLE                │
-    ├─────────────────────────────────────────────┤
-    │                                             │
-    │  👑 OWNER                                   │
-    │     └─ Workspace leader, project owner     │
-    │     └─ At least 1 required                 │
-    │     └─ Cannot be removed without transfer  │
-    │                                             │
-    │  🛡️  ADMIN                                  │
-    │     └─ Co-leaders, senior team members     │
-    │     └─ Same permissions as Owner           │
-    │     └─ Good for shared leadership          │
-    │                                             │
-    │  ✏️  EDITOR                                 │
-    │     └─ Active team contributors            │
-    │     └─ Can create and modify content       │
-    │     └─ Perfect for daily users             │
-    │                                             │
-    │  👁️  VIEWER                                 │
-    │     └─ Stakeholders, auditors              │
-    │     └─ Read-only access                    │
-    │     └─ For oversight/review roles          │
-    │                                             │
-    └─────────────────────────────────────────────┘
-```
+**Owner** role is for your workspace leader or project owner. At least one Owner is required per workspace, and they cannot be removed without transferring ownership first. They can do everything. Owners are workspace leaders and project owners. At least 1 required. Cannot be removed without transfer.
 
-The **Owner** role is for your workspace leader or project owner. At least one Owner is required per workspace, and they cannot be removed without transferring ownership first. They can do everything.
+**Admin** works well for co-leaders and senior team members. They have the same permissions as Owner, can be removed anytime, and are perfect for shared leadership scenarios. Admins are co-leaders and senior team members with same permissions as Owner and good for shared leadership.
 
-**Admin** works well for co-leaders and senior team members. They have the same permissions as Owner, can be removed anytime, and are perfect for shared leadership scenarios.
-
-**Editor** is your role for active team contributors. They can create and modify content but cannot invite people or change permissions. This makes them perfect for daily users who need to do real work but shouldn't manage access.
+**Editor** is your role for active team contributors. They can create and modify content but cannot invite people or change permissions. This makes them perfect for daily users who need to do real work but shouldn't manage access. Editors are active team contributors who can create and modify content and perfect for daily users.
 
 **Viewer** is designed for stakeholders, auditors, and anyone needing read-only access. They can view content and ask AI questions but cannot upload or modify anything. Use this for oversight and review roles.
 
@@ -139,20 +111,6 @@ Removing someone from a workspace revokes all their access immediately. They can
 5. Files they created stay (workspace owns them)
 
 ### Invitation Management
-
-```
-    ┌────────────────────────────────────────┐
-    │    INVITATION LIFECYCLE                │
-    ├────────────────────────────────────────┤
-    │                                        │
-    │  📧 Sent → ⏳ Pending (7 days)        │
-    │           ↓                            │
-    │           ├──► ✅ Active (accepted)    │
-    │           │                            │
-    │           └──► ⏰ Expired (resend)     │
-    │                                        │
-    └────────────────────────────────────────┘
-```
 
 **Sending Invitations**
 
@@ -261,29 +219,17 @@ When you disable a public link, all people with that link immediately lose acces
 
 ### Planning Access
 
-```
-    ┌────────────────────────────────────────┐
-    │    ACCESS PLANNING CHECKLIST           │
-    ├────────────────────────────────────────┤
-    │                                        │
-    │  ❓ CLARIFY                            │
-    │     ├─ Who needs access?              │
-    │     ├─ What should they see?          │
-    │     ├─ What should they NOT see?      │
-    │     └─ How long do they need it?      │
-    │                                        │
-    │  🎯 CHOOSE METHOD                      │
-    │     ├─ Long-term → Workspace invite   │
-    │     ├─ Temporary → Box share          │
-    │     ├─ General → Public link          │
-    │     └─ Partners → Box-level share     │
-    │                                        │
-    └────────────────────────────────────────┘
-```
+Before sharing anything, take a moment to clarify your needs:
+- **Who needs access?**
+- **What specific content should they see?**
+- **What should they NOT see?**
+- **How long will they need this access?**
 
-Before sharing anything, take a moment to clarify your needs. Who needs access? What specific content should they see? Just as importantly, what should they NOT see? And how long will they need this access?
-
-Once you've answered those questions, choose the right method. For long-term team members, invite them to the workspace. For temporary project access, share a specific box. For general audiences, use a public link. For external partners, use box-level sharing to control exactly what they can access.
+Once you've answered those questions, choose the right method:
+- **Long-term team members** → Invite them to the workspace
+- **Temporary project access** → Share a specific box
+- **General audiences** → Use a public link
+- **External partners** → Use box-level sharing to control exactly what they can access
 
 ### Communication
 
@@ -293,88 +239,45 @@ When inviting people, tell them they've been invited (beyond just the automatic 
 
 ### Security Principles
 
-```
-    ╔════════════════════════════════════════╗
-    ║     SECURITY PRINCIPLES                ║
-    ╠════════════════════════════════════════╣
-    ║                                        ║
-    ║  🔐 Minimum Access                     ║
-    ║     └─ Only what's needed              ║
-    ║                                        ║
-    ║  📅 Regular Reviews                    ║
-    ║     ├─ Monthly: Check access           ║
-    ║     ├─ Quarterly: Remove inactive      ║
-    ║     └─ Annually: Full audit            ║
-    ║                                        ║
-    ║  🔒 Sensitive Content                  ║
-    ║     └─ Separate workspaces             ║
-    ║                                        ║
-    ╚════════════════════════════════════════╝
-```
-
 **Minimum Access** means giving only the permissions people actually need. Don't make everyone an Admin just because it's easier. Use Viewer for read-only roles and only escalate permissions when absolutely necessary.
 
-**Regular Reviews** keep your security tight. Monthly, check who has access to what. Quarterly, remove inactive members who no longer need it. Annually, audit your full access structure. And critically, when someone leaves your organization, remove them immediately—don't wait.
+**Regular Reviews** keep your security tight:
+- Monthly: Check who has access to what
+- Quarterly: Remove inactive members who no longer need it
+- Annually: Audit your full access structure
+- Critical: When someone leaves your organization, remove them immediately—don't wait
 
-**Sensitive Content** requires extra care. Limit even Viewer access for confidential material. Consider using separate workspaces for highly restricted data. Disable public links for sensitive content. Track who accesses high-risk information.
+**Sensitive Content** requires extra care:
+- Limit even Viewer access for confidential material
+- Consider using separate workspaces for highly restricted data
+- Disable public links for sensitive content
+- Track who accesses high-risk information
 
 ## Advanced Sharing Scenarios
 
 ### Multi-Client Agency Setup
 
-```
-    ┌────────────────────────────────────────┐
-    │   AGENCY WORKSPACE STRUCTURE           │
-    ├────────────────────────────────────────┤
-    │                                        │
-    │  🏢 Main Workspace: "Agency"           │
-    │     │                                  │
-    │     ├─ 📦 Box: Client A (shared)       │
-    │     ├─ 📦 Box: Client B (shared)       │
-    │     ├─ 📦 Box: Client C (shared)       │
-    │     └─ 🔒 Box: Internal (private)      │
-    │                                        │
-    │  Benefits:                             │
-    │     ✅ Clients see only their content  │
-    │     ✅ Easy to add/remove clients      │
-    │     ✅ Clear separation                │
-    │                                        │
-    └────────────────────────────────────────┘
-```
-
 **Scenario:** You're an agency managing different clients, each with different access needs.
 
 **Structure:** Create a main workspace called "Agency". Inside, create a separate box for each client. Share each client box with only that specific client using the Viewer role. Keep an internal strategy box completely private for your team's eyes only.
 
-**Benefits:** Clients see only their content, never seeing work for other clients. It's easy to add new clients or remove old ones. The separation of work is crystal clear. The whole setup looks professional and organized.
+**Benefits:**
+- Clients see only their content, never seeing work for other clients
+- Easy to add new clients or remove old ones
+- The separation of work is crystal clear
+- The whole setup looks professional and organized
 
 ### Department Sharing
-
-```
-    ┌────────────────────────────────────────┐
-    │   COMPANY WORKSPACE STRUCTURE          │
-    ├────────────────────────────────────────┤
-    │                                        │
-    │  🏢 Main Workspace: "Company Name"     │
-    │     │                                  │
-    │     ├─ 📦 Marketing (team access)      │
-    │     ├─ 📦 Engineering (team access)    │
-    │     ├─ 📦 Sales (team access)          │
-    │     └─ 📦 Executive (restricted)       │
-    │                                        │
-    │  Benefits:                             │
-    │     ✅ Departments organized            │
-    │     ✅ Easy intra-team collaboration   │
-    │     ✅ Clear boundaries                │
-    │                                        │
-    └────────────────────────────────────────┘
-```
 
 **Scenario:** You need department-specific access within your company.
 
 **Structure:** Set up a main workspace with your company name. Create separate boxes for each department—Marketing, Engineering, Sales, etc. Share each department box with the relevant team members. Use the Editor role for active contributors and have the Owner or Admin maintain oversight across all departments.
 
-**Benefits:** Departments stay organized in their own spaces. Collaboration is easy within each team. Boundaries between departments are clear. Access is controlled but not restrictive.
+**Benefits:**
+- Departments stay organized in their own spaces
+- Collaboration is easy within each team
+- Boundaries between departments are clear
+- Access is controlled but not restrictive
 
 ### Public Documentation
 
