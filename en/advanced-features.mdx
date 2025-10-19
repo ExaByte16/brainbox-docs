@@ -1,0 +1,211 @@
+---
+title: "Advanced Features"
+description: "API integration, automation, and advanced workflows for power users"
+icon: "wand-magic-sparkles"
+---
+
+# Advanced Features
+
+Advanced capabilities for developers, power users, and enterprise teams.
+
+## API Keys & Integrations
+
+### Understanding API Keys
+
+**What Are They?**
+
+API Keys are special authentication tokens that allow external applications to access BrainBox programmatically. Think of them as machine passwords that let your apps and scripts interact with BrainBox without requiring manual login.
+
+**Who Needs Them?**
+
+Developers building integrations use API keys to connect their applications to BrainBox. Automation tools like Zapier and IFTTT require them to sync data. Custom scripts need them for batch operations. Advanced users leverage them for workflow automation. IT departments use them when building enterprise workflows that integrate BrainBox with other systems.
+
+### Creating API Keys
+
+<Steps>
+  <Step title="Go to API Keys">
+    Settings → API Keys (or Settings → Developer)
+  </Step>
+  <Step title="Create New">
+    Click "Create API Key" or "Generate Key"
+  </Step>
+  <Step title="Name It">
+    Give it descriptive name: "Zapier Integration", "Backup Script"
+  </Step>
+  <Step title="Set Expiration (Optional)">
+    Choose: No expiration, 30 days, 60 days, 1 year, or custom
+  </Step>
+  <Step title="Generate">
+    Click "Generate" - key appears once only
+  </Step>
+  <Step title="Copy & Store">
+    Copy immediately to secure location (password manager)
+  </Step>
+</Steps>
+
+<Warning>
+This is the ONLY time you'll see the full key. Copy and store securely immediately. If lost, must generate new key.
+</Warning>
+
+### Managing API Keys
+
+**View Your Keys**
+
+When you view your API keys, you'll see the name and prefix (just the first few characters for security), the creation date and when it was last used, and the current status showing whether it's active or expired.
+
+**Regenerate Keys**
+
+If a key is compromised, regenerate it immediately. The old key stops working as soon as you regenerate, so remember to update all your integrations with the new key right away.
+
+**Delete Keys**
+
+Deleting a key revokes access immediately and cannot be undone. The key cannot be recovered after deletion. If you need access again later, you'll have to generate a completely new key.
+
+### API Key Security
+
+Think of API keys like house keys—you need to protect them carefully. Store them securely in a password manager or vault, never in plain text files. Rotate them periodically, ideally every 90 days, to limit exposure if a key is somehow compromised. Use separate keys for each integration so you can revoke one without breaking everything. Track which integrations use which keys so you know what breaks if you delete a key. Delete unused keys promptly to reduce your attack surface.
+
+What you should never do: don't share keys in email or chat where they could be intercepted. Never post them in code repositories where they become public. Don't give them to untrusted people who might misuse them. Avoid using them in client-side code where anyone can see them in their browser. And absolutely don't commit them to version control—that's how keys end up on GitHub and get exploited.
+
+### Integrations
+
+BrainBox provides API access for developers to build custom integrations. You can build custom applications that connect directly to BrainBox, automate workflows, or sync data with other systems. The API gives you full programmatic control to integrate BrainBox into your existing tech stack.
+
+See our [integration guides](https://brainbox.com.co/integrations) for setup instructions and examples.
+
+<Tip>
+For comprehensive API documentation, code examples, and technical details, visit the [BrainBox API Reference](https://app.brainbox.com.co/en/reference/api/v1).
+</Tip>
+
+## Real-World Use Cases
+
+### Legal & Compliance Teams
+
+Managing confidential contracts and compliance documents requires tight access control and detailed audit trails. Many legal departments use BrainBox by setting up a dedicated "Legal Department" workspace with separate boxes organized by practice area—Corporate, Litigation, IP, and so on. Administrative staff get Viewer access so they can see what's needed without modifying sensitive documents. Quarterly exports of audit logs create a complete compliance record. The results speak for themselves: document discovery happens 50% faster, there's a complete audit trail for compliance, and client files stay secure.
+
+### Marketing & PR Agencies
+
+Agencies managing multiple client campaigns need a way to organize deliverables and keep clients updated without mixing projects. The solution is straightforward: set up one main workspace for the agency name, then create a separate box for each client. Share each client's box with them using the Viewer role so they can see progress. Use public links to share final deliverables. This approach makes campaign setup 30% faster, improves client collaboration by keeping everything transparent, and presents a professional, organized appearance.
+
+### Financial Institutions
+
+Banks and financial firms need strict regulatory compliance and comprehensive audit trails. Set up workspaces per department to keep different teams' data separate. Assign roles strictly—Owners for heads, Editors for analysts, Viewers for auditors. Conduct monthly access reviews to catch any unauthorized changes. Automate audit log exports so you always have records ready for regulators. This structure maintains regulatory compliance, keeps audit trails ready to go, and significantly enhances risk management by keeping departments isolated and access tight.
+
+### Consultancies
+
+Consultancies need to manage secure client engagements where clients collaborate on projects but can only see their own work. Create one workspace per engagement. Give the client Viewer access so they can track progress. Have internal Admins manage the workspace. Share final deliverables via public links so clients get polished, presentation-ready materials. This streamlines deliverable sharing, enables secure client collaboration, and maintains a professional appearance throughout the engagement.
+
+## Advanced Workflows
+
+### Multi-Workspace Team Setup
+
+**For large organizations with multiple teams:**
+
+1. **Create workspace hierarchy**
+   - Personal: "Me" (auto-created)
+   - Company main: "Company Name"
+   - Department-specific: "Engineering", "Marketing"
+   - Project-specific: "Project Q4"
+
+2. **Assign roles strategically**
+   - CEO: Owner across all
+   - Heads: Owner in their workspace
+   - Team members: Editor in primary
+   - Contractors: Viewer in specific projects
+
+3. **Document access policies**
+   - Keep access list current
+   - Periodic reviews (quarterly)
+   - Communication about changes
+   - Approval process for new access
+
+### Team Onboarding & Offboarding
+
+**Adding Members:**
+- Prepare workspace structure
+- Send workspace invitation
+- Assign appropriate role
+- Grant specific box access
+- Provide onboarding docs
+
+**Removing Members:**
+- 2-week notice recommended
+- Transfer ownership if needed
+- Remove from workspace
+- Document offboarding
+
+### Bulk File Organization
+
+**For large uploads:**
+
+1. **Prepare files**
+   - Organize locally first
+   - Use consistent naming
+   - Create staging box
+
+2. **Upload strategically**
+   - Batch uploads (browser)
+   - API for large batches (100+)
+   - Monitor processing
+
+3. **Organize post-upload**
+   - Tag all files
+   - Move to final boxes
+   - Verify permissions
+   - Clean up staging
+
+## Custom Workflows
+
+### Document Review Process
+
+1. **Author uploads** to "Draft" box
+2. **Reviewers access** and ask AI clarifying questions
+3. **AI generates** feedback summary
+4. **Author revises** document
+5. **Final reviewer** approves
+6. **Published** to "Final" box
+7. **Shared** via public link to stakeholders
+
+### AI-Powered Research
+
+1. **Upload** all source documents
+2. **Ask broad questions** about themes
+3. **Deep dive** with specific questions
+4. **Collect citations** for each answer
+5. **Synthesize** findings
+6. **Export** complete chat history
+7. **Publish** research report
+
+### Compliance Audit Preparation
+
+1. **Gather** all audit-relevant documents
+2. **Organize** into logical boxes
+3. **Tag** with compliance metadata
+4. **Export** audit logs (3 months)
+5. **Prepare** access documentation
+6. **Share** with auditors via public link
+7. **Track** audit questions and responses
+
+## Best Practices for Advanced Use
+
+### Planning Complex Setups
+
+Before implementing a complex BrainBox setup, take time to plan properly. Document your organization structure so you understand how teams and projects relate. Plan your workspace hierarchy—which workspaces you need and how they nest. Define role assignments clearly so everyone knows who should have what level of access.
+
+On the security front, create a formal access control policy that documents who can access what and why. Plan your retention and archival policy for old documents. Document all your procedures so new admins can follow them.
+
+When launching, test with a pilot group first to catch issues before rolling out organization-wide. Then train your team members thoroughly so they understand how to use the system properly.
+
+### Security for Advanced Users
+
+Regularly review your API keys to ensure they're all still needed and properly secured. Rotate keys on a 90-day cycle as best practice. Audit access logs regularly to spot unusual patterns. Monitor for unusual activity that might indicate a security issue. Keep any encryption keys secure in proper key management systems. Maintain compliance documentation updated with your current setup. Test disaster recovery procedures periodically. Document all security procedures so they're repeatable.
+
+### Monitoring & Maintenance
+
+Establish a regular maintenance schedule. Weekly, check recent activity for anything unusual. Monthly, review access permissions to ensure they're still appropriate. Quarterly, conduct full audits of logs and access patterns. Annually, perform a comprehensive security review of your entire BrainBox implementation.
+
+---
+
+Ready for advanced features? Start with [API keys](#creating-api-keys) or explore [real-world scenarios](#real-world-use-cases). Questions? See [Help & Support](/en/help-support) or contact support.
+
+**Contact Sales:** [sales-team@brainbox.com.co](mailto:sales-team@brainbox.com.co) for enterprise security options.

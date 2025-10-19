@@ -1,0 +1,400 @@
+---
+title: "Collaboration & Sharing"
+description: "Work with teams, share boxes, and manage permissions securely"
+icon: "handshake"
+---
+
+# Collaboration & Sharing
+
+Share your work safely with team members, stakeholders, and external partners with granular permission controls.
+
+## Sharing with Team Members
+
+### Workspace-Level Sharing
+
+**Invite people to your entire workspace:**
+
+<Steps>
+  <Step title="Open Workspace Settings">
+    Click workspace name dropdown → "Settings" or "Members"
+  </Step>
+  <Step title="Click Invite">
+    Find "Invite Members" or "Add People" button
+  </Step>
+  <Step title="Enter Email">
+    Type team member's email address (one or multiple)
+  </Step>
+  <Step title="Choose Role">
+    Select: Owner, Admin, Editor, or Viewer
+  </Step>
+  <Step title="Send">
+    Click "Send Invitation"
+  </Step>
+</Steps>
+
+They'll receive an email invitation. Once accepted, they have access to all content you allow based on their role.
+
+### Box-Level Sharing
+
+**Share specific boxes with granular control:**
+
+<Steps>
+  <Step title="Open the Box">
+    Click on the box you want to share
+  </Step>
+  <Step title="Click Share">
+    Find "Share" button or settings icon
+  </Step>
+  <Step title="Add Collaborators">
+    Click "Add People" or "Invite"
+  </Step>
+  <Step title="Enter Email">
+    Type person's email address
+  </Step>
+  <Step title="Choose Role">
+    Select their permission level
+  </Step>
+  <Step title="Invite">
+    Click "Send Invitation"
+  </Step>
+</Steps>
+
+This is the primary way to share content in BrainBox. You can share specific boxes with different people without giving workspace-wide access.
+
+<Note>
+**Sharing Model:** BrainBox uses per-box sharing (not per-file). Share entire boxes with specific people based on what they need to access.
+</Note>
+
+## Role-Based Access
+
+### Workspace Roles
+
+| Permission | Owner | Admin | Editor | Viewer |
+|------------|-------|-------|--------|--------|
+| View files | ✅ | ✅ | ✅ | ✅ |
+| Upload files | ✅ | ✅ | ✅ | ❌ |
+| Edit content | ✅ | ✅ | ✅ | ❌ |
+| Create boxes | ✅ | ✅ | ✅ | ❌ |
+| Invite members | ✅ | ✅ | ❌ | ❌ |
+| Change permissions | ✅ | ✅ | ❌ | ❌ |
+| Delete boxes | ✅ | ✅ | ❌ | ❌ |
+| Manage settings | ✅ | ✅ | ❌ | ❌ |
+
+### Choosing the Right Role
+
+```
+    ┌─────────────────────────────────────────────┐
+    │      CHOOSING THE RIGHT ROLE                │
+    ├─────────────────────────────────────────────┤
+    │                                             │
+    │  👑 OWNER                                   │
+    │     └─ Workspace leader, project owner     │
+    │     └─ At least 1 required                 │
+    │     └─ Cannot be removed without transfer  │
+    │                                             │
+    │  🛡️  ADMIN                                  │
+    │     └─ Co-leaders, senior team members     │
+    │     └─ Same permissions as Owner           │
+    │     └─ Good for shared leadership          │
+    │                                             │
+    │  ✏️  EDITOR                                 │
+    │     └─ Active team contributors            │
+    │     └─ Can create and modify content       │
+    │     └─ Perfect for daily users             │
+    │                                             │
+    │  👁️  VIEWER                                 │
+    │     └─ Stakeholders, auditors              │
+    │     └─ Read-only access                    │
+    │     └─ For oversight/review roles          │
+    │                                             │
+    └─────────────────────────────────────────────┘
+```
+
+The **Owner** role is for your workspace leader or project owner. At least one Owner is required per workspace, and they cannot be removed without transferring ownership first. They can do everything.
+
+**Admin** works well for co-leaders and senior team members. They have the same permissions as Owner, can be removed anytime, and are perfect for shared leadership scenarios.
+
+**Editor** is your role for active team contributors. They can create and modify content but cannot invite people or change permissions. This makes them perfect for daily users who need to do real work but shouldn't manage access.
+
+**Viewer** is designed for stakeholders, auditors, and anyone needing read-only access. They can view content and ask AI questions but cannot upload or modify anything. Use this for oversight and review roles.
+
+## Managing Collaborators
+
+### Changing Someone's Role
+
+1. Go to **Workspace Settings** → **"Members"**
+2. Find person in list
+3. Click their current role
+4. Select new role from dropdown
+5. Changes apply immediately
+
+### Removing Access
+
+<Warning>
+Removing someone from a workspace revokes all their access immediately. They can be re-invited later.
+</Warning>
+
+1. In Members list, find the person
+2. Click **"Remove"** or trash icon
+3. Confirm removal
+4. They immediately lose access
+5. Files they created stay (workspace owns them)
+
+### Invitation Management
+
+```
+    ┌────────────────────────────────────────┐
+    │    INVITATION LIFECYCLE                │
+    ├────────────────────────────────────────┤
+    │                                        │
+    │  📧 Sent → ⏳ Pending (7 days)        │
+    │           ↓                            │
+    │           ├──► ✅ Active (accepted)    │
+    │           │                            │
+    │           └──► ⏰ Expired (resend)     │
+    │                                        │
+    └────────────────────────────────────────┘
+```
+
+**Sending Invitations**
+
+You can invite multiple people at once by separating emails with commas or line breaks. Personalize the invitation if possible and include the purpose or context so recipients know why they're being added.
+
+**Invitation Expiration**
+
+Invitations remain valid for 7 days. If someone doesn't accept within that window, you'll need to resend the invitation. Some plans offer automatic email reminders.
+
+**Tracking Status**
+
+Invitations go through three states: **Pending** means the invitation was sent and you're waiting for acceptance. **Active** indicates the member accepted and now has access. **Expired** shows that 7 days passed without acceptance, and you need to resend.
+
+## Public Sharing
+
+### Creating Public Links
+
+Share boxes or files with anyone, no login required:
+
+<Steps>
+  <Step title="Open Box or File">
+    Navigate to what you want to share
+  </Step>
+  <Step title="Click Share">
+    Find "Share" button or menu
+  </Step>
+  <Step title="Click Public Link">
+    Find "Create Public Link" or "Public Sharing"
+  </Step>
+  <Step title="Copy Link">
+    A shareable URL appears (e.g., brainbox.com/share/xyz789)
+  </Step>
+  <Step title="Share">
+    Send link via email, chat, social media, etc.
+  </Step>
+</Steps>
+
+### Using Public Links
+
+**For Viewers:**
+- Click link to access (login required)
+- View box contents and files
+- Can ask AI questions in chat
+- Read-only access (cannot modify)
+
+**Who Should Get Links:**
+- Clients (project updates)
+- Stakeholders (reports/summaries)
+- Internal audiences (information sharing)
+- External partners (deliverables)
+
+<Note>
+Public links require viewer login to BrainBox. They provide read-only access to specific boxes.
+</Note>
+
+### Managing Public Links
+
+**View Active Links**
+1. Open box sharing settings
+2. See all active public links
+3. Each shows:
+   - The link URL
+   - Creation date
+   - Access count (optional)
+
+**Copy Link Again**
+1. Find the link
+2. Click "Copy"
+3. Use same link repeatedly
+
+**Change Link Settings**
+- Some options may allow editing permissions
+- Configure expiration if available
+- View access statistics
+
+**Disable Public Link**
+
+<Warning>
+When you disable a public link, all people with that link immediately lose access.
+</Warning>
+
+1. In public link section
+2. Click "Disable" or "Remove"
+3. Link no longer works
+4. Previous viewers lose access
+5. Can create new link anytime
+
+### Public Link Security
+
+**Keep Link Private**
+- Link is essentially a password
+- Don't post on public social media
+- Share directly with intended people
+
+**Link Protection**
+- Can't be "guessed" (uses random tokens)
+- Same link strength as secure passwords
+- Can change permissions anytime
+
+**Revoking Access**
+- Disable link immediately if compromised
+- Create new link for legitimate users
+- Monitor access if concerned
+
+## Collaboration Best Practices
+
+### Planning Access
+
+```
+    ┌────────────────────────────────────────┐
+    │    ACCESS PLANNING CHECKLIST           │
+    ├────────────────────────────────────────┤
+    │                                        │
+    │  ❓ CLARIFY                            │
+    │     ├─ Who needs access?              │
+    │     ├─ What should they see?          │
+    │     ├─ What should they NOT see?      │
+    │     └─ How long do they need it?      │
+    │                                        │
+    │  🎯 CHOOSE METHOD                      │
+    │     ├─ Long-term → Workspace invite   │
+    │     ├─ Temporary → Box share          │
+    │     ├─ General → Public link          │
+    │     └─ Partners → Box-level share     │
+    │                                        │
+    └────────────────────────────────────────┘
+```
+
+Before sharing anything, take a moment to clarify your needs. Who needs access? What specific content should they see? Just as importantly, what should they NOT see? And how long will they need this access?
+
+Once you've answered those questions, choose the right method. For long-term team members, invite them to the workspace. For temporary project access, share a specific box. For general audiences, use a public link. For external partners, use box-level sharing to control exactly what they can access.
+
+### Communication
+
+Clear documentation prevents confusion. Document who has access and why, keep your access list current, and communicate changes to your team when permissions shift.
+
+When inviting people, tell them they've been invited (beyond just the automatic email). Include the purpose in the invitation so they understand the context. Explain what they can do with their access level. For complex setups, provide onboarding guidance.
+
+### Security Principles
+
+```
+    ╔════════════════════════════════════════╗
+    ║     SECURITY PRINCIPLES                ║
+    ╠════════════════════════════════════════╣
+    ║                                        ║
+    ║  🔐 Minimum Access                     ║
+    ║     └─ Only what's needed              ║
+    ║                                        ║
+    ║  📅 Regular Reviews                    ║
+    ║     ├─ Monthly: Check access           ║
+    ║     ├─ Quarterly: Remove inactive      ║
+    ║     └─ Annually: Full audit            ║
+    ║                                        ║
+    ║  🔒 Sensitive Content                  ║
+    ║     └─ Separate workspaces             ║
+    ║                                        ║
+    ╚════════════════════════════════════════╝
+```
+
+**Minimum Access** means giving only the permissions people actually need. Don't make everyone an Admin just because it's easier. Use Viewer for read-only roles and only escalate permissions when absolutely necessary.
+
+**Regular Reviews** keep your security tight. Monthly, check who has access to what. Quarterly, remove inactive members who no longer need it. Annually, audit your full access structure. And critically, when someone leaves your organization, remove them immediately—don't wait.
+
+**Sensitive Content** requires extra care. Limit even Viewer access for confidential material. Consider using separate workspaces for highly restricted data. Disable public links for sensitive content. Track who accesses high-risk information.
+
+## Advanced Sharing Scenarios
+
+### Multi-Client Agency Setup
+
+```
+    ┌────────────────────────────────────────┐
+    │   AGENCY WORKSPACE STRUCTURE           │
+    ├────────────────────────────────────────┤
+    │                                        │
+    │  🏢 Main Workspace: "Agency"           │
+    │     │                                  │
+    │     ├─ 📦 Box: Client A (shared)       │
+    │     ├─ 📦 Box: Client B (shared)       │
+    │     ├─ 📦 Box: Client C (shared)       │
+    │     └─ 🔒 Box: Internal (private)      │
+    │                                        │
+    │  Benefits:                             │
+    │     ✅ Clients see only their content  │
+    │     ✅ Easy to add/remove clients      │
+    │     ✅ Clear separation                │
+    │                                        │
+    └────────────────────────────────────────┘
+```
+
+**Scenario:** You're an agency managing different clients, each with different access needs.
+
+**Structure:** Create a main workspace called "Agency". Inside, create a separate box for each client. Share each client box with only that specific client using the Viewer role. Keep an internal strategy box completely private for your team's eyes only.
+
+**Benefits:** Clients see only their content, never seeing work for other clients. It's easy to add new clients or remove old ones. The separation of work is crystal clear. The whole setup looks professional and organized.
+
+### Department Sharing
+
+```
+    ┌────────────────────────────────────────┐
+    │   COMPANY WORKSPACE STRUCTURE          │
+    ├────────────────────────────────────────┤
+    │                                        │
+    │  🏢 Main Workspace: "Company Name"     │
+    │     │                                  │
+    │     ├─ 📦 Marketing (team access)      │
+    │     ├─ 📦 Engineering (team access)    │
+    │     ├─ 📦 Sales (team access)          │
+    │     └─ 📦 Executive (restricted)       │
+    │                                        │
+    │  Benefits:                             │
+    │     ✅ Departments organized            │
+    │     ✅ Easy intra-team collaboration   │
+    │     ✅ Clear boundaries                │
+    │                                        │
+    └────────────────────────────────────────┘
+```
+
+**Scenario:** You need department-specific access within your company.
+
+**Structure:** Set up a main workspace with your company name. Create separate boxes for each department—Marketing, Engineering, Sales, etc. Share each department box with the relevant team members. Use the Editor role for active contributors and have the Owner or Admin maintain oversight across all departments.
+
+**Benefits:** Departments stay organized in their own spaces. Collaboration is easy within each team. Boundaries between departments are clear. Access is controlled but not restrictive.
+
+### Public Documentation
+
+**Scenario:** Share product docs, guides, help articles publicly
+
+**Structure:**
+- Create public box with documentation
+- Generate public link
+- Share link widely
+- No login required for viewers
+- Docs always current
+
+**Benefits:**
+- Reduce support tickets
+- Self-service for users
+- Professional appearance
+- Easily updated
+
+---
+
+Ready to collaborate? Start by [inviting team members](#workspace-level-sharing) or [creating a public link](#creating-public-links). For permission questions, see [Account & Workspaces](/en/account-workspaces).
