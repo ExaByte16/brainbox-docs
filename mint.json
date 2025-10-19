@@ -25,7 +25,6 @@
     {
       "name": "Español",
       "locale": "es"
-     
     }
   ],
   "font": {
@@ -57,17 +56,35 @@
   ],
   "navigation": [
     {
-      "group": "Get Started",
+      "group": "Documentation",
       "version": "English",
       "pages": [
-        "en/introduction"
+        "en/introduction",
+        "en/getting-started",
+        "en/account-workspaces",
+        "en/files-boxes",
+        "en/ai-chat-search",
+        "en/collaboration",
+        "en/plans-billing",
+        "en/security-compliance",
+        "en/advanced-features",
+        "en/help-support"
       ]
     },
     {
-      "group": "Empezar",
+      "group": "Documentación",
       "version": "Español",
       "pages": [
-        "es/introduction"
+        "es/introduction",
+        "es/getting-started",
+        "es/account-workspaces",
+        "es/files-boxes",
+        "es/ai-chat-search",
+        "es/collaboration",
+        "es/plans-billing",
+        "es/security-compliance",
+        "es/advanced-features",
+        "es/help-support"
       ]
     }
   ],

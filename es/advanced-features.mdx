@@ -1,0 +1,211 @@
+---
+title: "Características Avanzadas"
+description: "Integración API, automatización y flujos de trabajo avanzados para usuarios avanzados"
+icon: "wand-magic-sparkles"
+---
+
+# Características Avanzadas
+
+Capacidades avanzadas para desarrolladores, usuarios avanzados y equipos empresariales.
+
+## Claves API e Integraciones
+
+### Entendiendo Claves API
+
+**¿Qué Son?**
+
+Las Claves API son tokens de autenticación especiales que permiten a aplicaciones externas acceder a BrainBox programáticamente. Piénsalas como contraseñas de máquina que dejan tus aplicaciones y scripts interactuar con BrainBox sin requerir inicio de sesión manual.
+
+**¿Quién Las Necesita?**
+
+Los desarrolladores que construyen integraciones usan claves API para conectar sus aplicaciones a BrainBox. Las herramientas de automatización como Zapier e IFTTT las requieren para sincronizar datos. Los scripts personalizados las necesitan para operaciones en lote. Los usuarios avanzados las aprovechan para automatización de flujo de trabajo. Los departamentos de IT las usan cuando construyen flujos de trabajo empresariales que integran BrainBox con otros sistemas.
+
+### Creando Claves API
+
+<Steps>
+  <Step title="Ve a Claves API">
+    Configuración → Claves API (o Configuración → Desarrollador)
+  </Step>
+  <Step title="Crear Nueva">
+    Haz clic en "Crear Clave API" o "Generar Clave"
+  </Step>
+  <Step title="Nómbrala">
+    Dale nombre descriptivo: "Integración Zapier", "Script de Copia de Seguridad"
+  </Step>
+  <Step title="Establece Expiración (Opcional)">
+    Elige: Sin expiración, 30 días, 60 días, 1 año o personalizado
+  </Step>
+  <Step title="Genera">
+    Haz clic en "Generar" - la clave aparece solo una vez
+  </Step>
+  <Step title="Copia y Almacena">
+    Copia inmediatamente a ubicación segura (gestor de contraseñas)
+  </Step>
+</Steps>
+
+<Warning>
+Esta es la ÚNICA vez que verás la clave completa. Copia y almacena seguramente inmediatamente. Si se pierde, debes generar nueva clave.
+</Warning>
+
+### Gestión de Claves API
+
+**Ver Tus Claves**
+
+Cuando ves tus claves API, verás el nombre y prefijo (solo los primeros pocos caracteres por seguridad), la fecha de creación y cuándo fue usada por última vez, y el estado actual mostrando si está activa o expirada.
+
+**Regenerar Claves**
+
+Si una clave está comprometida, regenerala inmediatamente. La clave antigua deja de funcionar tan pronto como regeneras, así que recuerda actualizar todas tus integraciones con la nueva clave de inmediato.
+
+**Eliminar Claves**
+
+Eliminar una clave revoca acceso inmediatamente y no se puede deshacer. La clave no se puede recuperar después de la eliminación. Si necesitas acceso nuevamente más tarde, tendrás que generar completamente una nueva clave.
+
+### Seguridad de Clave API
+
+Piensa en claves API como llaves de casa—necesitas protegerlas cuidadosamente. Almacénalas seguramente en un gestor de contraseñas o bóveda, nunca en archivos de texto plano. Rótalas periódicamente, idealmente cada 90 días, para limitar exposición si una clave está comprometida de alguna manera. Usa claves separadas para cada integración para poder revocar una sin romper todo. Rastrea qué integraciones usan qué claves para que sepas qué se rompe si eliminas una clave. Elimina claves no usadas prontamente para reducir tu superficie de ataque.
+
+Lo que nunca deberías hacer: no compartas claves en correo o chat donde podrían ser interceptadas. Nunca las publiques en repositorios de código donde se convierten en públicas. No se las des a personas de confianza que podrían malutilizarlas. Evita usarlas en código del lado del cliente donde cualquiera puede verlas en su navegador. Y absolutamente no las comitas a control de versiones—así es cómo las claves terminan en GitHub y son explotadas.
+
+### Integraciones
+
+BrainBox proporciona acceso API para desarrolladores construir integraciones personalizadas. Puedes construir aplicaciones personalizadas que se conecten directamente a BrainBox, automatizar flujos de trabajo o sincronizar datos con otros sistemas. La API te da control programático completo para integrar BrainBox en tu stack tecnológico existente.
+
+Ve nuestras [guías de integración](https://brainbox.com.co/integrations) para instrucciones de configuración y ejemplos.
+
+<Tip>
+Para documentación API completa, ejemplos de código y detalles técnicos, visita la [Referencia API de BrainBox](https://app.brainbox.com.co/es/reference/api/v1).
+</Tip>
+
+## Casos de Uso del Mundo Real
+
+### Equipos Legales y Cumplimiento
+
+Gestionar contratos confidenciales y documentos de cumplimiento requiere control de acceso ajustado y pistas de auditoría detalladas. Muchos departamentos legales usan BrainBox configurando un espacio de trabajo dedicado "Departamento Legal" con boxes separados organizados por área de práctica—Corporativa, Litigio, Propiedad Intelectual, y así. El personal administrativo obtiene acceso Visor para que puedan ver qué se necesita sin modificar documentos sensibles. Las exportaciones trimestrales de registros de auditoría crean un registro de cumplimiento completo. Los resultados hablan por sí solos: el descubrimiento de documentos ocurre 50% más rápido, hay una pista de auditoría completa para cumplimiento, y los archivos de cliente permanecen seguros.
+
+### Agencias de Marketing y PR
+
+Las agencias que gestión múltiples campañas de cliente necesitan una manera de organizar entregables y mantener a los clientes actualizados sin mezclar proyectos. La solución es directa: configura un espacio de trabajo principal para el nombre de la agencia, luego crea un box separado para cada cliente. Comparte cada box del cliente con ellos usando el rol Visor para que puedan ver progreso. Usa enlaces públicos para compartir entregables finales. Este enfoque hace que la configuración de campaña sea 30% más rápida, mejora la colaboración con clientes manteniéndolo todo transparente, y presenta una apariencia profesional y organizada.
+
+### Instituciones Financieras
+
+Los bancos y firmas financieras necesitan cumplimiento regulatorio estricto y pistas de auditoría completas. Configura espacios de trabajo por departamento para mantener datos de diferentes equipos separados. Asigna roles estrictamente—Propietarios para cabezas, Editores para analistas, Visores para auditores. Realiza revisiones de acceso mensuales para atrapar cualquier cambio no autorizado. Automatiza exportaciones de registros de auditoría para que siempre tengas registros listos para reguladores. Esta estructura mantiene cumplimiento regulatorio, mantiene pistas de auditoría listas para ir, y mejora significativamente la gestión de riesgo manteniendo departamentos aislados y acceso ajustado.
+
+### Consultorías
+
+Las consultorías necesitan gestionar participaciones seguras de clientes donde los clientes colaboran en proyectos pero solo pueden ver su propio trabajo. Crea un espacio de trabajo por participación. Dale al cliente acceso Visor para que pueda rastrear progreso. Ten Administradores internos gestionar el espacio de trabajo. Comparte entregables finales vía enlaces públicos para que clientes obtengan materiales pulidos y listos para presentación. Esto agiliza la compartición de entregables, habilita colaboración segura con clientes, y mantiene una apariencia profesional a lo largo de toda la participación.
+
+## Flujos de Trabajo Avanzados
+
+### Configuración Multi-Espacio de Trabajo para Equipo
+
+**Para grandes organizaciones con múltiples equipos:**
+
+1. **Crear jerarquía de espacio de trabajo**
+   - Personal: "Yo" (auto-creado)
+   - Empresa principal: "Nombre de Empresa"
+   - Específico de departamento: "Ingeniería", "Marketing"
+   - Específico de proyecto: "Proyecto Q4"
+
+2. **Asignar roles estratégicamente**
+   - CEO: Propietario en todos
+   - Cabezas: Propietario en su espacio de trabajo
+   - Miembros del equipo: Editor en primario
+   - Contratistas: Visor en proyectos específicos
+
+3. **Documentar políticas de acceso**
+   - Mantener lista de acceso actual
+   - Revisiones periódicas (trimestrales)
+   - Comunicación sobre cambios
+   - Proceso de aprobación para nuevo acceso
+
+### Incorporación y Desincorporación de Equipo
+
+**Agregando Miembros:**
+- Preparar estructura del espacio de trabajo
+- Enviar invitación del espacio de trabajo
+- Asignar rol apropiado
+- Otorgar acceso a box específico
+- Proporcionar documentos de incorporación
+
+**Removiendo Miembros:**
+- Se recomienda aviso de 2 semanas
+- Transferir propiedad si es necesario
+- Remover del espacio de trabajo
+- Documentar desincorporación
+
+### Organización de Archivo a Granel
+
+**Para cargas grandes:**
+
+1. **Preparar archivos**
+   - Organizar localmente primero
+   - Usar nombres consistentes
+   - Crear box de preparación
+
+2. **Cargar estratégicamente**
+   - Cargas en lote (navegador)
+   - API para lotes grandes (100+)
+   - Monitorear procesamiento
+
+3. **Organizar post-carga**
+   - Etiquetar todos los archivos
+   - Mover a boxes finales
+   - Verificar permisos
+   - Limpiar preparación
+
+## Flujos de Trabajo Personalizados
+
+### Proceso de Revisión de Documento
+
+1. **Autor carga** a box "Borrador"
+2. **Revisores acceden** y hacen preguntas de aclaración de IA
+3. **IA genera** resumen de comentarios
+4. **Autor revisa** documento
+5. **Revisor final** aprueba
+6. **Publicado** a box "Final"
+7. **Compartido** vía enlace público a partes interesadas
+
+### Investigación Impulsada por IA
+
+1. **Cargar** todos los documentos fuente
+2. **Preguntar ampliamente** sobre temas
+3. **Profundizar** con preguntas específicas
+4. **Recopilar citas** para cada respuesta
+5. **Sintetizar** hallazgos
+6. **Exportar** historial de chat completo
+7. **Publicar** reporte de investigación
+
+### Preparación de Auditoría de Cumplimiento
+
+1. **Recopilar** todos los documentos relevantes de auditoría
+2. **Organizar** en boxes lógicos
+3. **Etiquetar** con metadatos de cumplimiento
+4. **Exportar** registros de auditoría (3 meses)
+5. **Preparar** documentación de acceso
+6. **Compartir** con auditores vía enlace público
+7. **Rastrear** preguntas de auditoría y respuestas
+
+## Mejores Prácticas para Uso Avanzado
+
+### Planeando Configuraciones Complejas
+
+Antes de implementar una configuración BrainBox compleja, tómate tiempo para planificar apropiadamente. Documenta tu estructura organizacional para que entiendas cómo equipos y proyectos se relacionan. Planifica tu jerarquía de espacio de trabajo—qué espacios de trabajo necesitas y cómo se anidan. Define asignaciones de rol claramente para que todos sepan quién debería tener qué nivel de acceso.
+
+En el frente de seguridad, crea una política de control de acceso formal que documente quién puede acceder a qué y por qué. Planifica tu política de retención y archivo para documentos antiguos. Documenta todos tus procedimientos para que nuevos administradores puedan seguirlos.
+
+Cuando lanzas, prueba con un grupo piloto primero para atrapar problemas antes de rodar organización-ancho. Luego capacita exhaustivamente a tus miembros del equipo para que entiendan cómo usar el sistema apropiadamente.
+
+### Seguridad para Usuarios Avanzados
+
+Revisa regularmente tus claves API para asegurar que todas sean aún necesarias y apropiadamente aseguradas. Rota claves en un ciclo de 90 días como mejor práctica. Audita registros de acceso regularmente para detectar patrones inusuales. Monitorea para actividad inusual que podría indicar un problema de seguridad. Mantén cualquier clave de encriptación segura en sistemas apropiados de gestión de claves. Mantén documentación de cumplimiento actualizada con tu configuración actual. Prueba procedimientos de recuperación de desastres periódicamente. Documenta todos los procedimientos de seguridad para que sean repetibles.
+
+### Monitoreo y Mantenimiento
+
+Establece un cronograma regular de mantenimiento. Semanalmente, verifica actividad reciente para cualquier cosa inusual. Mensualmente, revisa permisos de acceso para asegurar que aún sean apropiados. Trimestralmente, realiza auditorías completas de registros y patrones de acceso. Anualmente, realiza una revisión de seguridad completa de toda tu implementación de BrainBox.
+
+---
+
+¿Listo para características avanzadas? Comienza con [claves API](#creating-api-keys) o explora [escenarios del mundo real](#real-world-use-cases). ¿Preguntas? Ve [Ayuda y Soporte](/es/help-support) o contacta soporte.
+
+**Contacta Ventas:** [sales-team@brainbox.com.co](mailto:sales-team@brainbox.com.co) para opciones de seguridad empresarial.

@@ -1,0 +1,245 @@
+---
+title: "Account & Workspaces"
+description: "Manage your account, create workspaces, and set up teams"
+icon: "building"
+---
+
+# Account & Workspaces
+
+Understand how to manage your BrainBox account, create and organize workspaces, and manage team members with the right permissions.
+
+## Your Account
+
+### Personal Workspace ("Me")
+
+When you sign up, you automatically get a personal workspace called **"Me"**. Think of this as your private space where only you have access. Your personal subscription applies here, and all files remain private unless you explicitly share them. It's perfect for personal projects and testing features before rolling them out to your team.
+
+All files in your personal workspace are yours alone—other team members cannot see them even if you're part of shared workspaces.
+
+### Account Settings
+
+To access your account settings, click your profile icon in the top-right corner and select "Account Settings" or "Settings". Here you can manage your email address, update your profile information, and adjust your data preferences.
+
+<Note>
+You cannot change your password. BrainBox uses Google or Microsoft authentication.
+</Note>
+
+## Workspaces
+
+### What is a Workspace?
+
+A **Workspace** is a container for organizing teams, projects, and content:
+
+| Feature | Personal ("Me") | Team Workspace |
+|---------|-----------------|-----------------|
+| **Members** | Just you | Multiple people |
+| **Access Control** | You own everything | Owner/Admin/Editor/Viewer roles |
+| **Sharing** | Manual per file | Workspace-level permissions |
+| **Billing** | Your personal plan | Separate workspace billing |
+| **Use Case** | Personal projects | Team collaboration |
+
+### Creating a Workspace
+
+```
+    ┌─────────────────────────────────────────┐
+    │    WORKSPACE CREATION FLOW              │
+    ├─────────────────────────────────────────┤
+    │                                         │
+    │  1️⃣  Click "Create Workspace"           │
+    │       ↓                                 │
+    │  2️⃣  Name it descriptively              │
+    │       └─ "Marketing Team Q4" ✅         │
+    │       └─ "Workspace1" ❌                │
+    │       ↓                                 │
+    │  3️⃣  Invite team members (optional)     │
+    │       └─ Enter emails                   │
+    │       └─ Choose roles                   │
+    │       ↓                                 │
+    │  4️⃣  Workspace ready instantly          │
+    │                                         │
+    └─────────────────────────────────────────┘
+```
+
+Creating a workspace is straightforward. Start by looking for the "Create Workspace" or "+ New Workspace" button and click it.
+
+Next, give your workspace a descriptive name. Good names like "Marketing Team Q4", "Project Alpha", or "Client ABC - 2025" tell you immediately what the workspace contains. Avoid vague names like "Workspace1" that won't mean anything to you later. Click "Create" when you're done.
+
+If you want to invite team members right away, click "Invite Members" or "Add People". Enter the email addresses of your team members, choose their role (see [Roles & Permissions](#roles--permissions) below for guidance), and click "Send Invitations". They'll receive email invitations to join.
+
+Your new workspace is created and ready to use immediately, whether or not you invited anyone yet.
+
+### Switching Workspaces
+
+Switching between workspaces is easy. Look at the top-left or top-center area where you'll see your current workspace name with a dropdown arrow next to it. Click on it to see a list of all your workspaces, then select the one you want to switch to. The interface immediately updates to show that workspace's content.
+
+You can also switch from within settings by clicking the workspace name and selecting your desired workspace from the list.
+
+## Roles & Permissions
+
+### Understanding Roles
+
+BrainBox uses four permission levels:
+
+| Role | Create Files | Create Boxes | Edit Content | Invite People | Manage Settings | Delete Box |
+|------|---|---|---|---|---|---|
+| **Owner** | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
+| **Admin** | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
+| **Editor** | ✅ | ✅ | ✅ | ❌ | ❌ | ❌ |
+| **Viewer** | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ |
+
+### Role Details
+
+The **Owner** has full control of the workspace and can invite and remove members, manage all settings, and delete boxes and files. Importantly, there's only one Owner per workspace—no co-ownership is allowed. The Owner cannot be removed unless they transfer ownership to someone else first.
+
+**Admin** roles have the same permissions as the Owner and can manage the workspace, its content, and invite or remove members. The key difference is that Admins cannot delete the workspace itself, and they can be added or removed at any time.
+
+**Editors** are your active contributors who can upload and modify files, create and edit boxes, but cannot invite people or change permissions. They also cannot delete boxes they don't own, keeping your organizational structure safer.
+
+**Viewers** have read-only access. They can view files and boxes, and even ask questions in the AI chat, but they cannot upload or modify anything. This role is perfect for stakeholders who need to see information but shouldn't change it.
+
+### Assigning Roles
+
+When inviting new members, go to Workspace Settings and click on "Members", then hit "Invite" or "Add Member". Enter their email address, select the appropriate role from the dropdown menu, and click "Send Invitation". It's that simple.
+
+For changing an existing member's role, find them in the Members list, click on their current role, and select the new role from the dropdown. The changes apply immediately without any delay.
+
+## Managing Team Members
+
+### Inviting Team Members
+
+<Steps>
+  <Step title="Open Workspace Settings">
+    Click workspace name → "Settings" or "Members"
+  </Step>
+  <Step title="Click Invite">
+    Find "Invite Members" or "Add People" button
+  </Step>
+  <Step title="Enter Email">
+    Type team member's email address
+  </Step>
+  <Step title="Choose Role">
+    Select Owner, Admin, Editor, or Viewer
+  </Step>
+  <Step title="Send">
+    Click "Send Invitation"
+  </Step>
+</Steps>
+
+They'll receive an email invitation. Once they accept, they have access with the assigned role.
+
+<Tip>
+Send invitations multiple times if needed. Invitations expire after 7 days if not accepted.
+</Tip>
+
+### Invitation Status
+
+- **Pending**: Invitation sent, waiting for acceptance
+- **Active**: Member has accepted and has access
+- **Expired**: Invitation not accepted within 7 days (resend if needed)
+
+### Removing Members
+
+1. In **Members** list, find the person
+2. Click **"Remove"** or the trash icon
+3. Confirm removal
+4. They immediately lose access to the workspace
+
+<Warning>
+Removing someone revokes all their access. Files they created stay in the workspace and belong to the workspace owner.
+</Warning>
+
+### Managing Multiple Members
+
+For teams, clear role assignment is essential. Give people the minimum permissions they actually need to do their jobs—don't make everyone an Admin just because it's easier. Use the Viewer role for stakeholders who only need to read content, not modify it.
+
+Regular reviews keep your workspace secure. On a quarterly basis, review who has access to what. Remove former team members promptly and update roles as people's responsibilities change. This prevents access creep where people accumulate permissions they no longer need.
+
+Documentation helps everyone understand the system. Keep a list of team members and their roles, document your access policies, and communicate clearly about permissions when you make changes. This transparency prevents confusion and security gaps.
+
+## Workspace Settings
+
+### Accessing Workspace Settings
+
+1. Click workspace name dropdown
+2. Select **"Workspace Settings"** or **"Settings"**
+
+### What You Can Manage
+
+**General Settings**
+- Workspace name
+- Status (active/inactive)
+- Description
+
+**Members**
+- View all team members
+- Change roles
+- Remove members
+- Send invitations
+
+**Billing** (Admin/Owner only)
+- View subscription
+- View usage/quotas
+- Manage billing information
+
+**Quotas & Usage**
+- See current usage
+- Monitor Intelligence Units
+- Track storage space
+- View indexed pages
+
+### Workspace Status
+
+**Active Workspace**
+- All members have full access
+- Files are searchable
+- AI chat works normally
+
+**Inactive/Paused**
+- Useful for archiving old projects
+- Members still have access (based on role)
+- Can reactivate anytime
+
+## Transferring Ownership
+
+If you're leaving or want to transfer ownership:
+
+<Steps>
+  <Step title="Choose New Owner">
+    Select an existing Admin member
+  </Step>
+  <Step title="Change Role">
+    Go to their member profile and change role to "Owner"
+  </Step>
+  <Step title="Confirm">
+    They are now the new Owner
+  </Step>
+  <Step title="Remove Yourself">
+    You can now remove yourself from workspace
+  </Step>
+</Steps>
+
+<Warning>
+Only one Owner allowed per workspace. You cannot remove the last Owner.
+</Warning>
+
+## Best Practices
+
+### Organization
+
+Create separate workspaces for each team or project—Marketing Team, Engineering, Client ABC, Project Q4. This separation keeps work organized and makes permission management straightforward.
+
+Use descriptive names that tell you what the workspace contains at a glance. "Product Launch 2025" is great; "Workspace1" tells you nothing. Your team will thank you when they're switching between workspaces.
+
+Clear role assignments follow a pattern: the lead is the Owner, department heads become Admins, team members get Editor access, and stakeholders become Viewers. This hierarchy makes sense and is easy to remember.
+
+### Security
+
+Regular access reviews should happen monthly. Check team membership, remove inactive members, and update roles as people's responsibilities change. This prevents security drift where old permissions pile up.
+
+The minimum permissions principle means you don't make everyone an Admin just because it's convenient. Use Viewer for read-only access and limit Editor status to people actively contributing. This reduces your security surface area.
+
+Document your policies by keeping access control documented, communicating changes to your team, and having an approval process for granting access. This creates accountability and prevents ad-hoc permission grants that bypass your security model.
+
+---
+
+Ready to set up your team? Start by [creating a workspace](#creating-a-workspace) or [inviting members](#inviting-team-members). Questions? Check [Help & Support](/en/help-support).
