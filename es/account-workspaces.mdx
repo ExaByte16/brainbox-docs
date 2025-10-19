@@ -1,0 +1,245 @@
+---
+title: "Cuenta y Espacios de Trabajo"
+description: "Gestiona tu cuenta, crea espacios de trabajo y configura equipos"
+icon: "building"
+---
+
+# Cuenta y Espacios de Trabajo
+
+Aprende cómo gestionar tu cuenta de BrainBox, crear y organizar espacios de trabajo, y gestionar miembros del equipo con los permisos correctos.
+
+## Tu Cuenta
+
+### Espacio de Trabajo Personal ("Yo")
+
+Cuando te registras, obtienes automáticamente un espacio de trabajo personal llamado **"Yo"**. Piensa en esto como tu espacio privado donde solo tú tienes acceso. Tu suscripción personal se aplica aquí, y todos los archivos permanecen privados a menos que los compartas explícitamente. Es perfecto para proyectos personales y probar características antes de implementarlas en tu equipo.
+
+Todos los archivos en tu espacio de trabajo personal son solo tuyos—otros miembros del equipo no pueden verlos incluso si eres parte de espacios de trabajo compartidos.
+
+### Configuración de Cuenta
+
+Para acceder a la configuración de tu cuenta, haz clic en el icono de tu perfil en la esquina superior derecha y selecciona "Configuración de Cuenta" o "Configuración". Aquí puedes gestionar tu dirección de correo electrónico, actualizar la información de tu perfil y ajustar tus preferencias de datos.
+
+<Note>
+No puedes cambiar tu contraseña. BrainBox usa autenticación de Google o Microsoft.
+</Note>
+
+## Espacios de Trabajo
+
+### ¿Qué es un Espacio de Trabajo?
+
+Un **Espacio de Trabajo** es un contenedor para organizar equipos, proyectos y contenido:
+
+| Característica | Personal ("Yo") | Espacio de Trabajo de Equipo |
+|---------|-----------------|-----------------|
+| **Miembros** | Solo tú | Múltiples personas |
+| **Control de Acceso** | Tú posees todo | Roles Propietario/Administrador/Editor/Visor |
+| **Compartición** | Manual por archivo | Permisos a nivel de espacio de trabajo |
+| **Facturación** | Tu plan personal | Facturación separada del espacio de trabajo |
+| **Caso de Uso** | Proyectos personales | Colaboración en equipo |
+
+### Crear un Espacio de Trabajo
+
+```
+    ┌─────────────────────────────────────────┐
+    │    FLUJO DE CREACIÓN DE ESPACIO         │
+    ├─────────────────────────────────────────┤
+    │                                         │
+    │  1️⃣  Haz Clic en "Crear Espacio"        │
+    │       ↓                                 │
+    │  2️⃣  Nómbralo descriptivamente          │
+    │       └─ "Equipo de Marketing Q4" ✅   │
+    │       └─ "Espacio1" ❌                 │
+    │       ↓                                 │
+    │  3️⃣  Invita miembros (opcional)         │
+    │       └─ Ingresa correos              │
+    │       └─ Elige roles                   │
+    │       ↓                                 │
+    │  4️⃣  Espacio de trabajo listo           │
+    │                                         │
+    └─────────────────────────────────────────┘
+```
+
+Crear un espacio de trabajo es sencillo. Comienza buscando el botón "Crear Espacio de Trabajo" o "+ Nuevo Espacio de Trabajo" y haz clic en él.
+
+A continuación, dale a tu espacio de trabajo un nombre descriptivo. Nombres buenos como "Equipo de Marketing Q4", "Proyecto Alpha" o "Cliente ABC - 2025" te dicen inmediatamente qué contiene el espacio de trabajo. Evita nombres vagos como "Espacio1" que no significarán nada más adelante. Haz clic en "Crear" cuando hayas terminado.
+
+Si deseas invitar miembros del equipo de inmediato, haz clic en "Invitar Miembros" o "Agregar Personas". Ingresa las direcciones de correo electrónico de tus miembros del equipo, elige su rol (consulta [Roles y Permisos](#roles--permisos) a continuación para obtener orientación) y haz clic en "Enviar Invitaciones". Recibirán invitaciones por correo electrónico para unirse.
+
+Tu nuevo espacio de trabajo se crea y está listo para usar de inmediato, independientemente de si invitaste a alguien o no.
+
+### Cambiar de Espacios de Trabajo
+
+Cambiar entre espacios de trabajo es fácil. Mira el área superior izquierda o superior central donde verás el nombre de tu espacio de trabajo actual con una flecha desplegable junto a él. Haz clic en ella para ver una lista de todos tus espacios de trabajo y luego selecciona el que deseas. La interfaz se actualiza inmediatamente para mostrar el contenido de ese espacio de trabajo.
+
+También puedes cambiar desde la configuración haciendo clic en el nombre del espacio de trabajo y seleccionando tu espacio de trabajo deseado de la lista.
+
+## Roles y Permisos
+
+### Entendiendo Roles
+
+BrainBox usa cuatro niveles de permiso:
+
+| Rol | Crear Archivos | Crear Boxes | Editar Contenido | Invitar Personas | Gestionar Configuración | Eliminar Box |
+|------|---|---|---|---|---|---|
+| **Propietario** | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
+| **Administrador** | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
+| **Editor** | ✅ | ✅ | ✅ | ❌ | ❌ | ❌ |
+| **Visor** | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ |
+
+### Detalles de Roles
+
+El **Propietario** tiene control total del espacio de trabajo y puede invitar y remover miembros, gestionar toda la configuración, y eliminar boxes y archivos. Importantemente, solo hay un Propietario por espacio de trabajo—no se permite co-propiedad. El Propietario no puede ser removido a menos que transfiera la propiedad a alguien más primero.
+
+Los roles de **Administrador** tienen los mismos permisos que el Propietario y pueden gestionar el espacio de trabajo, su contenido e invitar o remover miembros. La diferencia clave es que los Administradores no pueden eliminar el espacio de trabajo en sí, y pueden ser agregados o removidos en cualquier momento.
+
+**Editores** son tus contribuyentes activos que pueden cargar y modificar archivos, crear y editar boxes, pero no pueden invitar personas ni cambiar permisos. Tampoco pueden eliminar boxes que no poseen, manteniendo tu estructura organizacional más segura.
+
+**Visores** tienen acceso de solo lectura. Pueden ver archivos y boxes e incluso hacer preguntas en el chat de IA, pero no pueden cargar ni modificar nada. Este rol es perfecto para partes interesadas que necesitan ver información pero no deberían cambiarla.
+
+### Asignar Roles
+
+Al invitar nuevos miembros, ve a Configuración del Espacio de Trabajo y haz clic en "Miembros", luego presiona "Invitar" o "Agregar Miembro". Ingresa su dirección de correo electrónico, selecciona el rol apropiado del menú desplegable y haz clic en "Enviar Invitación". Es así de simple.
+
+Para cambiar el rol de un miembro existente, encuéntralo en la lista de Miembros, haz clic en su rol actual y selecciona el nuevo rol del desplegable. Los cambios se aplican inmediatamente sin demora alguna.
+
+## Gestión de Miembros del Equipo
+
+### Invitar Miembros del Equipo
+
+<Steps>
+  <Step title="Abre Configuración del Espacio">
+    Haz clic en el nombre del espacio → "Configuración" o "Miembros"
+  </Step>
+  <Step title="Haz Clic en Invitar">
+    Encuentra el botón "Invitar Miembros" o "Agregar Personas"
+  </Step>
+  <Step title="Ingresa Correo">
+    Escribe la dirección de correo del miembro del equipo
+  </Step>
+  <Step title="Elige Rol">
+    Selecciona Propietario, Administrador, Editor o Visor
+  </Step>
+  <Step title="Enviar">
+    Haz clic en "Enviar Invitación"
+  </Step>
+</Steps>
+
+Recibirán una invitación por correo electrónico. Una vez que la acepten, tienen acceso con el rol asignado.
+
+<Tip>
+Envía invitaciones múltiples veces si es necesario. Las invitaciones vencen después de 7 días si no se aceptan.
+</Tip>
+
+### Estado de Invitación
+
+- **Pendiente**: Invitación enviada, esperando aceptación
+- **Activo**: Miembro aceptó y tiene acceso
+- **Expirado**: Invitación no aceptada dentro de 7 días (reenvía si es necesario)
+
+### Remover Miembros
+
+1. En la lista de **Miembros**, encuentra la persona
+2. Haz clic en **"Remover"** o el icono de papelera
+3. Confirma la remoción
+4. Pierden acceso inmediatamente al espacio de trabajo
+
+<Warning>
+Remover a alguien revoca todo su acceso. Los archivos que crearon permanecen en el espacio de trabajo y pertenecen al propietario del espacio.
+</Warning>
+
+### Gestión de Múltiples Miembros
+
+Para equipos, la asignación clara de roles es esencial. Da a las personas los permisos mínimos que realmente necesitan para hacer sus trabajos—no hagas a todos Administradores solo porque es más fácil. Usa el rol Visor para partes interesadas que solo necesitan leer contenido, no modificarlo.
+
+Las revisiones regulares mantienen tu espacio de trabajo seguro. Trimestralmente, revisa quién tiene acceso a qué. Remueve miembros del equipo anterior prontamente y actualiza roles a medida que cambian las responsabilidades de las personas. Esto previene el arrastre de acceso donde las personas acumulan permisos que ya no necesitan.
+
+La documentación ayuda a todos a entender el sistema. Mantén una lista de miembros del equipo y sus roles, documenta tus políticas de acceso, y comunica claramente sobre permisos cuando realizas cambios. Esta transparencia previene confusión y brechas de seguridad.
+
+## Configuración del Espacio de Trabajo
+
+### Acceder a la Configuración del Espacio de Trabajo
+
+1. Haz clic en el desplegable del nombre del espacio de trabajo
+2. Selecciona **"Configuración del Espacio"** o **"Configuración"**
+
+### Qué Puedes Gestionar
+
+**Configuración General**
+- Nombre del espacio de trabajo
+- Estado (activo/inactivo)
+- Descripción
+
+**Miembros**
+- Ver todos los miembros del equipo
+- Cambiar roles
+- Remover miembros
+- Enviar invitaciones
+
+**Facturación** (Solo Administrador/Propietario)
+- Ver suscripción
+- Ver uso/cuotas
+- Gestionar información de facturación
+
+**Cuotas y Uso**
+- Ver uso actual
+- Monitorear Unidades de Inteligencia
+- Rastrear espacio de almacenamiento
+- Ver páginas indexadas
+
+### Estado del Espacio de Trabajo
+
+**Espacio de Trabajo Activo**
+- Todos los miembros tienen acceso completo
+- Los archivos son buscables
+- El chat de IA funciona normalmente
+
+**Inactivo/Pausado**
+- Útil para archivar proyectos antiguos
+- Los miembros aún tienen acceso (según el rol)
+- Puedes reactivar en cualquier momento
+
+## Transferir Propiedad
+
+Si te estás yendo o deseas transferir la propiedad:
+
+<Steps>
+  <Step title="Elige Nuevo Propietario">
+    Selecciona un miembro Administrador existente
+  </Step>
+  <Step title="Cambia Rol">
+    Ve a su perfil de miembro y cambia el rol a "Propietario"
+  </Step>
+  <Step title="Confirma">
+    Ahora son el nuevo Propietario
+  </Step>
+  <Step title="Elimínate">
+    Ahora puedes removerte a ti mismo del espacio de trabajo
+  </Step>
+</Steps>
+
+<Warning>
+Solo un Propietario permitido por espacio de trabajo. No puedes remover al último Propietario.
+</Warning>
+
+## Mejores Prácticas
+
+### Organización
+
+Crea espacios de trabajo separados para cada equipo o proyecto—Equipo de Marketing, Ingeniería, Cliente ABC, Proyecto Q4. Esta separación mantiene el trabajo organizado y hace que la gestión de permisos sea sencilla.
+
+Usa nombres descriptivos que te digan qué contiene el espacio de trabajo de un vistazo. "Lanzamiento de Producto 2025" es excelente; "Espacio1" no te dice nada. Tu equipo te lo agradecerá cuando cambien entre espacios de trabajo.
+
+Las asignaciones claras de roles siguen un patrón: el líder es el Propietario, los jefes de departamento se convierten en Administradores, los miembros del equipo obtienen acceso Editor, y las partes interesadas se convierten en Visores. Esta jerarquía tiene sentido y es fácil de recordar.
+
+### Seguridad
+
+Las revisiones regulares de acceso deben ocurrir mensualmente. Verifica la membresía del equipo, remueve miembros inactivos y actualiza roles a medida que cambian las responsabilidades de las personas. Esto previene la desviación de seguridad donde los permisos antiguos se acumulan.
+
+El principio de permisos mínimos significa que no hagas a todos Administradores solo porque sea conveniente. Usa Visor para acceso de solo lectura y limita el estado de Editor a personas que están contribuyendo activamente. Esto reduce tu superficie de seguridad.
+
+Documenta tus políticas manteniendo el control de acceso documentado, comunicando cambios a tu equipo y teniendo un proceso de aprobación para otorgar acceso. Esto crea responsabilidad y previene otorgamientos de permiso ad-hoc que eluden tu modelo de seguridad.
+
+---
+
+¿Listo para configurar tu equipo? Comienza [creando un espacio de trabajo](#crear-un-espacio-de-trabajo) o [invitando miembros](#invitar-miembros-del-equipo). ¿Preguntas? Consulta [Ayuda y Soporte](/es/help-support).

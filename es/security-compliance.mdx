@@ -1,0 +1,299 @@
+---
+title: "Seguridad y Cumplimiento"
+description: "Seguridad de nivel empresarial, cumplimiento GDPR y capacidades de auditoría"
+icon: "lock"
+---
+
+# Seguridad y Cumplimiento
+
+Información completa sobre la arquitectura de seguridad de BrainBox, certificaciones de cumplimiento y medidas de protección de datos.
+
+## Arquitectura de Seguridad
+
+### Infraestructura Principal
+
+BrainBox se construye sobre infraestructura en nube de nivel empresarial que prioriza seguridad en cada capa. Nuestra base de datos y autenticación funcionan en Supabase, que está respaldado por AWS y certificado para SOC 2 Tipo II e ISO 27001. La búsqueda de vectores es impulsada por Pinecone, adhiriéndose a estándares de seguridad empresarial. Los pagos se procesan a través de PayU y Trelli, ambos compatibles con PCI DSS Nivel 1. La infraestructura subyacente funciona en AWS con múltiples regiones y redundancia integrada.
+
+### Encriptación
+
+Los datos en tránsito están protegidos con TLS 1.2 o superior para todas las conexiones. Cada llamada API está encriptada y toda la transmisión de datos ocurre sobre HTTPS—sin excepciones.
+
+Los datos en reposo están asegurados con encriptación AES-256 para la base de datos, almacenamiento de archivos encriptado y copias de seguridad encriptadas. Esto asegura que tus datos estén protegidos ya sea moviéndose a través de la red o sentado en almacenamiento.
+
+<Note>
+Los datos se encriptan siguiendo mejores prácticas de la industria. Para detalles específicos de implementación de encriptación, contacta security@brainbox.com.co.
+</Note>
+
+### Control de Acceso
+
+**Autenticación y Autorización**
+
+La autenticación segura ocurre vía Google o Microsoft, eliminando vulnerabilidades relacionadas con contraseñas. La seguridad a nivel de fila (RLS) es forzada a nivel de base de datos, y el control de acceso basado en roles asegura que los usuarios solo puedan acceder a lo que se supone deben.
+
+**Modelo de Permiso**
+
+Los permisos funcionan en múltiples niveles. Los permisos a nivel de espacio de trabajo asignan roles Propietario, Administrador, Editor o Visor. El control de acceso a nivel de box proporciona opciones de compartición granular. La enforcement a nivel de base de datos previene acceso no autorizado incluso si algo rodea la capa de aplicación. La verificación de permisos en tiempo real verifica cada solicitud.
+
+## Cumplimiento y Certificaciones
+
+### Estándares de la Industria y Mejores Prácticas
+
+BrainBox sigue las mejores prácticas de seguridad y usa proveedores de infraestructura con certificaciones de la industria:
+
+**Proveedores de Infraestructura:**
+- **AWS** - SOC 2 Tipo II, certificado ISO 27001
+- **Supabase** - SOC 2 Tipo II, certificado ISO 27001  
+- **Pinecone** - Estándares de seguridad empresarial
+- **Vercel** - Cumplimiento SOC 2
+- **GCP y Azure** - Estándares de seguridad empresarial
+
+<Note>
+BrainBox sigue mejores prácticas pero no está certificado independientemente. Confiamos en las certificaciones de nuestros proveedores ascendentes para infraestructura y garantías de seguridad.
+</Note>
+
+### Cumplimiento GDPR
+
+**Tus Derechos de Datos**
+
+Tienes el **Derecho de Acceso**, significando que puedes exportar todos tus datos en cualquier momento en formatos como PDF, CSV o JSON.
+
+El **Derecho de Eliminación** te permite eliminar tu cuenta y todos los datos asociados. Para eliminar tu cuenta completa, contacta support@brainbox.com.co. Una vez iniciado, la purga automática ocurre después de 30 días. También puedes eliminar archivos individuales y boxes uno por uno desde dentro de la aplicación en cualquier momento.
+
+**Derecho de Portabilidad** asegura que puedas descargar tus datos en formatos estándar, haciendo fácil transferir a otras plataformas sin bloqueo de proveedor.
+
+**Derecho de Rectificación** te da el poder de actualizar información personal y corregir errores de datos a través de auto-servicio en Configuración.
+
+**Procesamiento de Datos**
+
+Obtenemos consentimiento explícito al registrarse, tenemos acuerdos de procesamiento de datos en lugar, documentamos base legal para todo procesamiento, y practicamos minimización de datos—recogiendo solo lo necesario.
+
+### SOC 2 e ISO 27001
+
+Nuestros proveedores de infraestructura (AWS, Supabase) mantienen certificaciones SOC 2 Tipo II e ISO 27001, asegurando:
+- Controles de seguridad y monitoreo
+- Procedimientos de gestión de cambios
+- Capacidades de respuesta a incidentes
+- Políticas de seguridad de información
+
+### Copia de Seguridad de Datos y Recuperación
+
+**Copias de Seguridad Automatizadas**
+- Copias de seguridad continuas a ubicaciones distribuidas geográficamente
+- Encriptación de copia de seguridad automática
+- Prueba regular de restauración
+
+<Note>
+Mantenemos copias de seguridad regulares y usamos procedimientos de recuperación estándar de la industria. Para escenarios de recuperación específicos o requisitos de SLA, contacta ventas empresarial.
+</Note>
+
+### Registros de Auditoría y Monitoreo
+
+**Actividad Rastreada**
+
+Los registros de auditoría rastrean intentos y éxitos de inicio de sesión, cambios de permiso, carga de archivos y acceso, cambios de miembros del espacio de trabajo, y generación y uso de claves API.
+
+**Para Espacios de Trabajo**
+
+Los registros de auditoría están disponibles para actividades a nivel de espacio de trabajo, pueden ser exportados para propósitos de cumplimiento, y proporcionan rastreo de actividad para responsabilidad.
+
+<Note>
+Los registros de auditoría rastrean actividades del espacio de trabajo. Para requisitos de auditoría detallados o alertas en tiempo real, contacta sales-team@brainbox.com.co para opciones empresariales.
+</Note>
+
+## Características de Seguridad
+
+### Gestión de Sesión
+
+La gestión de sesión estándar sigue mejores prácticas de seguridad:
+- Manejo seguro de sesión
+- Gestión de sesión basada en actividad
+- Cookies de sesión seguras
+
+<Note>
+La gestión de sesión se implementa siguiendo mejores prácticas de seguridad. Para configuración de sesión específica o endurecimiento de seguridad, contacta soporte.
+</Note>
+
+### Seguridad de Clave API
+
+<Warning>
+Mantén claves API secretas. Trata como contraseñas.
+</Warning>
+
+- Única por integración
+- Puedes establecer fechas de expiración
+- Alcance a espacios de trabajo específicos
+- Revocable en cualquier momento
+- Rota regularmente (recomendación de 90 días)
+
+### Seguridad de Archivo
+
+**Validación de Carga**
+- Verificación de tipo de archivo
+- Escaneo de malware disponible
+- Validación de tamaño
+- Verificación de integridad
+
+**Seguridad de Almacenamiento**
+- Encriptado en reposo
+- Acceso registrado
+- Políticas de retención
+- Limpieza automática
+
+## Cumplimiento y Mejores Prácticas de Seguridad
+
+### Para Tu Organización
+
+```
+    ╔════════════════════════════════════════╗
+    ║   LISTA DE VERIFICACIÓN DE MEJORES     ║
+    ║      PRÁCTICAS DE SEGURIDAD            ║
+    ╠════════════════════════════════════════╣
+    ║                                        ║
+    ║  🔐 Gestión de Acceso                  ║
+    ║     ├─ Revisa miembros regularmente   ║
+    ║     ├─ Remueve usuarios inactivos     ║
+    ║     └─ Usa acceso basado en roles     ║
+    ║                                        ║
+    ║  📄 Gestión de Datos                   ║
+    ║     ├─ Clasifica por sensibilidad     ║
+    ║     ├─ Elimina cuando termines        ║
+    ║     └─ Monitorea acceso               ║
+    ║                                        ║
+    ║  👥 Seguridad de Colaboración         ║
+    ║     ├─ Invita solo miembros necesarios│
+    ║     ├─ Permisos mínimos               ║
+    ║     └─ Revisiones regulares de acceso ║
+    ║                                        ║
+    ╚════════════════════════════════════════╝
+```
+
+**Gestión de Acceso**
+
+Usa contraseñas fuertes y únicas donde sea aplicable y habilita autenticación multifactor cuando esté disponible. Revisa miembros del espacio de trabajo regularmente y remueve acceso para usuarios inactivos prontamente. Implementa acceso basado en roles, usando Visor para necesidades de solo lectura. Mantén documentación de tus políticas de control de acceso.
+
+**Gestión de Datos**
+
+Clasifica archivos por nivel de sensibilidad para que sepas qué necesita protección extra. Usa permisos apropiados para cada clasificación. Elimina archivos sensibles cuando termines con ellos en lugar de dejarlos acumularse. Deshabilita enlaces públicos cuando ya no se necesitan. Monitorea patrones de acceso de archivo y documenta tus políticas de manejo de datos.
+
+**Seguridad de Colaboración**
+
+Solo invita miembros que genuinamente necesiten acceso. Asigna los permisos mínimos requeridos para el rol de cada persona. Documenta tus políticas de acceso para que todos las entiendan. Comunica claramente sobre sensibilidad de datos. Realiza revisiones de acceso regulares—mensualmente o trimestralmente dependiendo de tus necesidades. Ten un proceso claro de remoción para empleados que se separan de la organización.
+
+### Respuesta a Incidentes
+
+```
+    ┌────────────────────────────────────────┐
+    │    FLUJO DE REPORTE DE INCIDENTE       │
+    ├────────────────────────────────────────┤
+    │                                        │
+    │  Sospechas de Problema                 │
+    │       ↓                                │
+    │  Envía correo security@brainbox.com.co │
+    │       ├─ No publiques públicamente    │
+    │       ├─ Describe el problema         │
+    │       ├─ Cuándo ocurrió               │
+    │       └─ Incluye mensajes de error    │
+    │       ↓                                │
+    │  Respuesta dentro de 24 horas          │
+    │       ↓                                │
+    │  Investigación y Resolución            │
+    │                                        │
+    └────────────────────────────────────────┘
+```
+
+**Si Sospechas de un Problema de Seguridad**
+
+Primero, no publiques sobre ello públicamente—eso podría empeorar el problema. Envía correo a security@brainbox.com.co inmediatamente. Incluye una descripción del problema, cuándo ocurrió, tu correo de cuenta y cualquier mensaje de error que hayas visto. Recibirás una respuesta dentro de 24 horas y comunicaremos el cronograma de investigación.
+
+**Proceso de Respuesta de BrainBox**
+
+Nuestro equipo de seguridad sigue un proceso sistemático: evaluación e triaje inmediato del problema, contención si es necesario para prevenir propagación, investigación a fondo y análisis de causa raíz, remediación y prueba de correcciones, comunicación a usuarios afectados, y revisión post-incidente para prevenir recurrencia.
+
+## Servicios de Terceros
+
+### Lo Que Usamos
+
+**Infraestructura y Bases de Datos**
+- Supabase (Base de datos PostgreSQL + autenticación)
+- Pinecone (base de datos de vectores para búsqueda de IA)
+- AWS (infraestructura en nube)
+- Vercel (hosting de aplicación)
+- GCP y Azure (servicios adicionales)
+
+**Pagos**
+- PayU y Trelli (procesamiento de pagos)
+- Estándares de cumplimiento PCI DSS mantenidos
+- Datos de pago nunca almacenados en BrainBox
+
+**Análisis** (Opcional)
+- Análisis de uso disponible
+- Implementación enfocada en privacidad
+- Sin datos personales compartidos
+
+### Política de Compartición de Datos
+
+**BrainBox NO:**
+- ❌ Comparte datos con publicistas
+- ❌ Vende datos de usuario
+- ❌ Usa datos para marketing sin consentimiento
+- ❌ Otorga acceso a terceros sin permiso
+- ❌ Entrena modelos de IA en tus datos sin consentimiento
+
+**Principios de Compartición de Datos**
+- Solo cuando es necesario para servicio
+- Bajo Acuerdos de Procesamiento de Datos
+- Con consentimiento explícito del usuario
+- Compatible con GDPR y ley de privacidad
+
+## Características Empresariales
+
+### Para Grandes Organizaciones
+
+Para organizaciones que necesitan soluciones personalizadas, ofrecemos:
+
+**Opciones de Implementación**
+- Implementación en instalaciones bajo contratos personalizados
+- Implementación en nube personalizada en tu propia infraestructura
+- Personalización y configuración personalizada
+
+**Soporte y SLAs**
+- Gerente de cuenta dedicado
+- Soporte prioritario
+- Acuerdos de SLA personalizados
+
+**Contacta Ventas** para opciones empresariales: [sales-team@brainbox.com.co](mailto:sales-team@brainbox.com.co)
+
+## Transparencia e Informes
+
+### Seguridad y Cumplimiento
+
+Nuestra infraestructura se construye en proveedores con credenciales de seguridad fuertes:
+- AWS: SOC 2 Tipo II, ISO 27001
+- Supabase: SOC 2 Tipo II, ISO 27001  
+- Procesamiento de pagos verificado a través de PayU y Trelli
+- Protección de datos compatible con GDPR
+
+### Privacidad y Legal
+
+- **Política de Privacidad:** [Ver aquí](https://drive.google.com/file/d/1W_k49wFqX9hQkv-GSbjpzjDVxH5KotUd/view)
+- **Términos y Condiciones:** [Ver aquí](https://drive.google.com/file/d/1qlGgvg3vVzSVD1OZYDOCnIC2-AGbMKnq/view)
+
+<Tip>
+Si necesitas datos exportados en un formato que BrainBox no soporta, por favor contacta support@brainbox.com.co y te ayudaremos a acceder tu información.
+</Tip>
+
+### Divulgación de Vulnerabilidad
+
+Si descubres una vulnerabilidad de seguridad:
+1. Envía correo security@brainbox.com.co
+2. Incluye descripción detallada
+3. BrainBox investiga y corrige
+4. Se aprecia divulgación responsable
+
+---
+
+**¿Preguntas de Seguridad?** Contacta [security@brainbox.com.co](mailto:security@brainbox.com.co)
+
+**¿Preguntas de Privacidad?** Contacta [support@brainbox.com.co](mailto:support@brainbox.com.co)
+
+**¿Solicitudes de Datos?** Contacta [support@brainbox.com.co](mailto:support@brainbox.com.co)

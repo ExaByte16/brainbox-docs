@@ -1,0 +1,293 @@
+---
+title: "Archivos y Boxes"
+description: "Carga documentos, organiza archivos y crea colecciones con chat de IA"
+icon: "folder-open"
+---
+
+# Archivos y Boxes
+
+Aprende cómo gestionar documentos, crear colecciones organizadas (Boxes) y usar etiquetas para mantener todo accesible.
+
+## Archivos: Almacenamiento y Gestión
+
+### Tipos de Archivos Soportados
+
+BrainBox soporta más de 50 formatos de archivo, lo que lo hace versátil para cualquier tipo de trabajo con documentos.
+
+**Documentos** son totalmente soportados, incluyendo PDFs (incluso escaneados con OCR), documentos de Word con extracción completa de texto, presentaciones de PowerPoint con todas las diapositivas incluidas, hojas de cálculo de Excel donde se preservan fórmulas y datos, y archivos de texto plano en varios formatos.
+
+**Imágenes** también reciben tratamiento de IA. Archivos JPEG, PNG y TIFF son analizados y el texto se extrae mediante OCR, haciendo todos los tipos de imagen buscables con reconocimiento visual.
+
+**Audio y Video** se transcriben automáticamente usando speech-to-text, convirtiendo tu contenido de audio y video en texto buscable. Los formatos soportados incluyen MP3, WAV, M4A, OGG, FLAC, AAC, AC3 y OPUS.
+
+**Archivos de Datos** como CSV obtienen análisis automático de datos, mientras que archivos JSON y XML tienen sus estructuras de datos preservadas para consultas fáciles.
+
+**Código** también es soportado, con resaltado de sintaxis completo y buscabilidad para JavaScript, Python, TypeScript, CSS, HTML y más de 20 lenguajes de programación adicionales.
+
+<Tip>
+Para una lista completa y detallada de todos los tipos de archivo soportados con requisitos específicos y limitaciones, visita la [Referencia de Tipos de Archivo Soportados](https://app.brainbox.com.co/es/reference/file-types).
+</Tip>
+
+### Limitaciones de Archivos
+
+| Límite | Detalles |
+|-------|---------|
+| **Tamaño Máximo** | 1 GB por archivo |
+| **Almacenamiento** | Depende de tu plan (50 MB - 3 GB) |
+| **Conteo de Carga** | Ilimitado (hasta que el almacenamiento esté lleno) |
+| **Tiempo de Procesamiento** | Pequeño (< 10 MB): 1-2 min; Grande (100+ MB): máximo 8 min |
+| **Soporte OCR** | PDFs escaneados e imágenes automáticamente OCR'd |
+
+### Cargar Archivos
+
+<Steps>
+  <Step title="Navega a Archivos">
+    Haz clic en la sección "Archivos" o ve a tu Box
+  </Step>
+  <Step title="Haz Clic en Cargar">
+    Busca "Cargar Archivos", "+ Agregar Archivos" o el área de arrastrar-soltar
+  </Step>
+  <Step title="Selecciona Archivos">
+    Elige uno o múltiples archivos de tu computadora
+  </Step>
+  <Step title="Espera el Procesamiento">
+    Estado: "Cargando" → "Procesando" → "Indexado"
+  </Step>
+  <Step title="Listo para Buscar">
+    Una vez "Indexado", los archivos son buscables y listos para chat de IA
+  </Step>
+</Steps>
+
+<Tip>
+Arrastra y suelta archivos directamente en BrainBox para cargar más rápido. Selecciona múltiples archivos con Ctrl (Cmd en Mac) para cargas en lote.
+</Tip>
+
+### Gestión de Archivos
+
+**Ver Detalles del Archivo**
+1. Haz clic en un nombre de archivo
+2. Ve metadatos: nombre, tamaño, tipo, fecha de carga, estado, páginas
+3. Ve etiquetas asociadas
+4. Opción para descargar archivo original
+
+**Buscar Archivos**
+1. En la sección Archivos, usa el cuadro de búsqueda
+2. Escribe nombre de archivo o palabras clave
+3. Los resultados se filtran mientras escribes
+4. Haz clic en resultado para ver archivo
+
+**Eliminar Archivos**
+
+<Warning>
+Eliminar archivos es permanente. Una vez eliminados, no se pueden recuperar.
+</Warning>
+
+1. Encuentra el archivo
+2. Haz clic en el menú de tres puntos o click derecho
+3. Selecciona "Eliminar"
+4. Confirma eliminación
+5. El espacio de almacenamiento se libera
+
+**Mejores Prácticas**
+
+Usa nombres de archivo claros y descriptivos desde el principio—tu yo futuro te lo agradecerá. Organiza archivos en Boxes relevantes para que los documentos relacionados permanezcan juntos. Agrega etiquetas para categorización rápida y filtrado. Regularmente elimina archivos antiguos o innecesarios para mantener tu espacio de trabajo limpio y permanecer dentro de los límites de cuota. ¡Y por favor, no uses nombres poco claros como "Documento1.pdf" que no te dicen nada sobre el contenido!
+
+## Boxes: Colecciones Organizadas
+
+### ¿Qué es un Box?
+
+Un **Box** es una colección de archivos relacionados con un área de chat de IA dedicada. Piénsalo como una carpeta de proyecto que contiene todos los archivos para un proyecto, una colección de cliente que tiene todo para un cliente específico, una biblioteca de tema que organiza archivos sobre un tema, o un expediente de caso con todos los archivos relacionados con un caso. Los Boxes hacen fácil mantener documentos relacionados juntos y tener conversaciones enfocadas sobre ellos.
+
+### ¿Por Qué Usar Boxes?
+
+<CardGroup cols={2}>
+  <Card title="Organización" icon="list-check">
+    Agrupa archivos relacionados lógicamente por proyecto o tema
+  </Card>
+  <Card title="Chats Enfocados" icon="message-dots">
+    Ten conversaciones sobre colecciones específicas
+  </Card>
+  <Card title="Compartición Fácil" icon="share-nodes">
+    Comparte colecciones completas con un conjunto de permisos
+  </Card>
+  <Card title="Colaboración en Equipo" icon="users">
+    Todos los miembros del equipo ven la misma estructura organizada
+  </Card>
+</CardGroup>
+
+### Crear un Box
+
+<Steps>
+  <Step title="Ve a la Sección Boxes">
+    Haz clic en "Boxes" en la navegación izquierda
+  </Step>
+  <Step title="Haz Clic Crear Box">
+    Busca el botón "Crear Box" o "+ Nuevo Box"
+  </Step>
+  <Step title="Selecciona Archivos">
+    Elige archivos a incluir (puedes agregar más después)
+  </Step>
+  <Step title="Nombra Tu Box">
+    Usa nombre descriptivo: "Q4 Marketing" no "Box1"
+  </Step>
+  <Step title="Crear">
+    Haz clic en "Crear Box" - instantáneamente disponible
+  </Step>
+</Steps>
+
+### Gestión de Boxes
+
+**Ver Tus Boxes**
+
+Haz clic en la sección "Boxes" y todos tus boxes aparecen en una vista de lista o cuadrícula. Cada box muestra su nombre, conteo de archivos, fecha de creación y número de conversaciones de chat.
+
+**Ordenar y Filtrar**
+
+Ordena tus boxes por nombre, actualización reciente, fecha de creación o más usado. Filtrarlos para ver solo tus boxes, boxes compartidos contigo o todos los boxes a la vez.
+
+**Encontrar un Box**
+
+Usa el cuadro de búsqueda en la parte superior, escribe el nombre del box y los resultados se filtran instantáneamente mientras escribes.
+
+**Abrir un Box**
+
+Haz clic en el nombre del box para abrirlo. Verás todos los archivos en el box, la interfaz de chat aparece y puedes desplazarte para ver conversaciones previas.
+
+**Renombrar un Box**
+
+Haz clic en el nombre del box o el icono de edición, ingresa el nuevo nombre y presiona Enter para guardar. Así de simple.
+
+**Eliminar un Box**
+
+<Note>
+Eliminar un Box NO elimina los archivos. Los archivos permanecen en tu sección Archivos y pueden ser agregados a otros boxes.
+</Note>
+
+1. Encuentra box en lista
+2. Haz clic en menú de tres puntos
+3. Selecciona "Eliminar Box"
+4. Confirma eliminación
+5. El box se elimina, los archivos permanecen seguros
+
+### Gestión de Archivos Dentro de Boxes
+
+**Agregar Archivos a un Box**
+1. Abre el Box
+2. Haz clic en "Agregar Archivos" o "+"
+3. Selecciona archivos a agregar
+4. Aparecen en el box inmediatamente
+
+**Remover Archivos de un Box**
+1. En lista de archivos, haz clic en el icono "X"
+2. Confirma remoción
+3. Archivo removido del box (no eliminado del sistema)
+4. Archivo aún accesible desde la sección Archivos
+
+**Copiar Archivos a Otro Box**
+1. Menú de archivo → "Agregar a Otro Box"
+2. Selecciona box destino
+3. Archivo ahora en ambos boxes
+
+## Etiquetas: Organización Inteligente
+
+### ¿Qué son las Etiquetas?
+
+**Etiquetas** son labels que creas para organizar y encontrar archivos rápidamente. Podrías usar etiquetas de estado como "Importante", "Revisar", "Final" o "Borrador". Etiquetas de proyecto como "Cliente_ABC", "Proyecto_Q4" o "Presupuesto_2025" te ayudan a filtrar por engagement. Etiquetas de seguridad como "Confidencial", "Público" o "Interno" indican niveles de acceso.
+
+### Crear Etiquetas
+
+<Steps>
+  <Step title="Ve a Configuración del Espacio">
+    Haz clic en nombre del espacio → "Configuración"
+  </Step>
+  <Step title="Encuentra Sección de Etiquetas">
+    Busca "Etiquetas" o "Labels"
+  </Step>
+  <Step title="Crear Nueva Etiqueta">
+    Haz clic en "Crear Etiqueta" o "+"
+  </Step>
+  <Step title="Nombra la Etiqueta">
+    Usa nombres claros y consistentes
+  </Step>
+  <Step title="Elige Color">
+    Elige un color para identificación visual
+  </Step>
+  <Step title="Guardar">
+    La etiqueta ya está disponible para usar
+  </Step>
+</Steps>
+
+### Aplicar Etiquetas
+
+**A Archivos Individuales**
+1. Haz clic en detalles del archivo
+2. Encuentra sección "Etiquetas"
+3. Haz clic en "Agregar Etiqueta"
+4. Selecciona etiqueta de lista
+5. La etiqueta aparece en el archivo
+
+**A Múltiples Archivos**
+1. Selecciona múltiples archivos (checkboxes)
+2. Haz clic en botón "Agregar Etiquetas"
+3. Selecciona una o más etiquetas
+4. Las etiquetas se aplican a todos los archivos seleccionados
+
+### Usar Etiquetas para Filtrar
+
+1. En lista de archivos, ve opciones de filtro de etiqueta
+2. Haz clic en etiqueta para filtrar
+3. Solo aparecen archivos con esa etiqueta
+4. Selecciona múltiples etiquetas para combinar filtros
+5. Puedes usar lógica AND u OR
+
+### Gestión de Etiquetas
+
+| Acción | Cómo |
+|--------|-----|
+| **Editar** | Haz clic en etiqueta → Editar nombre/color/descripción |
+| **Eliminar** | Haz clic en etiqueta → Eliminar (la elimina de todos los archivos) |
+
+<Note>
+Las etiquetas pueden ser editadas o eliminadas. Una vez que se elimina una etiqueta, se remueve de todos los archivos que la tenían.
+</Note>
+
+### Mejores Prácticas para Etiquetas
+
+**Usa Nombres Consistentes** adhiriéndote a un patrón. "Cliente_ABC" y "Cliente_XYZ" funcionan muy bien juntos. Mezclar "Cliente ABC", "ClienteABC" y "ABC" crea confusión y derrota el propósito.
+
+**Elige Colores Significativos** que tengan sentido de un vistazo. Rojo señala artículos urgentes o importantes, verde indica versiones aprobadas o finales, amarillo marca cosas pendientes de revisión, y azul puede denotar materiales internos o de referencia.
+
+**Mantén Conteos de Etiqueta Razonables** con alrededor de 10-20 etiquetas en todo tu espacio de trabajo. Tener 100+ etiquetas es demasiado difícil de gestionar y pasarás más tiempo eligiendo etiquetas que trabajando realmente.
+
+**Combina con Boxes** estratégicamente. Usa boxes para organización mayor (como separar clientes o proyectos) y etiquetas para categorización detallada dentro de esos boxes (como estado, prioridad o tipo de documento).
+
+## Estrategia de Organización de Archivos
+
+### Estructura Recomendada
+
+```
+Espacio de Trabajo: "Nombre de Empresa"
+├── Box: "Proyectos de Cliente"
+│   ├── Archivos etiquetados: "Cliente_A", "Q4", "Activo"
+│   ├── Archivos etiquetados: "Cliente_B", "Q3", "Archivado"
+│
+├── Box: "Operaciones Internas"
+│   ├── Archivos etiquetados: "Finanzas", "Presupuesto", "2025"
+│   ├── Archivos etiquetados: "RRHH", "Políticas", "Actual"
+│
+├── Box: "Investigación y Referencia"
+│   ├── Archivos etiquetados: "Análisis_Industria", "Investigación"
+│   ├── Archivos etiquetados: "Investigación_Competencia", "2024"
+```
+
+### Planificación de Tu Organización
+
+Antes de cargar archivos, tómate un momento para planificar tu organización. Pregúntate: ¿Cuántos Boxes necesitas? Generalmente 3-5 principales son suficientes. ¿Qué archivos van en cada uno? Organiza por proyecto, cliente, tipo de documento o equipo. ¿Qué etiquetas ayudarán? Considera etiquetas de estado, urgencia, confidencialidad y fecha. ¿Quién necesita acceso? Recuerda que boxes individuales pueden tener diferentes permisos.
+
+### Consejos
+
+Crea Boxes antes de cargar muchos archivos—es más fácil organizar mientras avanzas que ordenar cientos de archivos después. Etiqueta archivos mientras los cargas mientras el contexto está fresco. Usa convenciones de nombres consistentes para que todos en tu equipo entiendan el sistema. Archiva boxes antiguos en lugar de eliminarlos para que mantengas historial. Revisa tu organización trimestralmente para asegurarte de que tenga sentido a medida que tu trabajo evoluciona.
+
+---
+
+¿Listo para organizarte? Comienza [cargando archivos](#cargar-archivos) o [crea tu primer Box](#crear-un-box). Aprende sobre [chat y búsqueda de IA](/es/ai-chat-search) a continuación.
